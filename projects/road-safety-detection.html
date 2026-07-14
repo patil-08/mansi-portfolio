@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Road Safety Detection System | Project Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="project-detail-page">
+  <header class="project-detail-header">
+    <a class="back-link" href="../index.html#projects">← Back to portfolio</a>
+  </header>
+
+  <main class="project-detail-main">
+    <section class="project-detail-hero glass-card">
+      <div>
+        <p class="eyebrow">Project Case Study</p>
+        <h1>Road Safety Detection System</h1>
+        <p class="section-copy">A real-time computer vision solution for identifying traffic violations and supporting safer roads through automated scene analysis.</p>
+        <div class="project-detail-meta">
+          <span class="status-pill completed">Completed</span>
+          <span>OpenCV • YOLO • Pandas • Python</span>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-small btn-ghost" href="https://github.com/patil-08/roadsaftetydetection" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn btn-small btn-primary" href="https://github.com/patil-08/roadsaftetydetection" target="_blank" rel="noopener noreferrer">Live Demo</a>
+        </div>
+      </div>
+      <div class="project-detail-hero-visual">
+        <div class="project-detail-metric-card">
+          <strong>Real-time</strong>
+          <span>monitoring</span>
+        </div>
+        <div class="project-detail-metric-card">
+          <strong>3 classes</strong>
+          <span>violations detected</span>
+        </div>
+        <div class="project-detail-metric-card">
+          <strong>24/7</strong>
+          <span>inspection support</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Overview</h2>
+      <p>The project applies object detection and video analysis to recognize dangerous roadway behavior from visual inputs and support safer citywide monitoring.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Business Problem</h2>
+      <p>Road safety monitoring can be costly and inconsistent when it relies only on manual observation. A scalable vision-based system can help identify risky events more reliably.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Objectives</h2>
+      <ul class="detail-list">
+        <li>Detect traffic violations from video streams.</li>
+        <li>Provide structured outputs for road-safety analysis.</li>
+        <li>Reduce manual review burden for monitoring teams.</li>
+      </ul>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Dataset</h2>
+      <p>Video and image datasets with labeled traffic scenes were used to train and validate the detection workflow.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Data Cleaning</h2>
+      <p>Frames were filtered for clarity, resized for consistent input, and annotated with usable labels for model training.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>EDA</h2>
+      <p>Exploratory analysis focused on lighting variance, camera angle, and object overlap to understand detection difficulty and improve robustness.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Feature Engineering</h2>
+      <p>Bounding-box normalization, frame-level augmentation, and object-context features were used to strengthen model robustness across scenes.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Model Selection</h2>
+      <p>YOLO-based object detection was chosen for its strong real-time detection performance and practical deployment friendliness.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Training</h2>
+      <p>The model was trained on curated road-scene examples and tuned to improve confidence and detection consistency across multiple scenarios.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Evaluation</h2>
+      <p>Performance was evaluated using detection confidence, precision on violation classes, and robustness across different scenes and conditions.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Deployment</h2>
+      <p>The workflow was packaged for local and lightweight deployment so it can be tested on live camera feeds or recorded clips.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Architecture Diagram</h2>
+      <svg class="architecture-svg" viewBox="0 0 760 320" role="img" aria-label="Road safety detection architecture diagram">
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+            <path d="M0,0 L10,4 L0,8 z" fill="#67e8f9"></path>
+          </marker>
+        </defs>
+        <line class="diagram-arrow" x1="92" y1="160" x2="162" y2="160"></line>
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="20" y="120" width="140" height="80" rx="18"></rect>
+          <text class="diagram-node-label" x="90" y="155" text-anchor="middle">Camera Feed</text>
+        </g>
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="170" y="120" width="140" height="80" rx="18"></rect>
+          <text class="diagram-node-label" x="240" y="155" text-anchor="middle">Preprocessing</text>
+        </g>
+        <line class="diagram-arrow" x1="310" y1="160" x2="380" y2="160"></line>
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="390" y="120" width="140" height="80" rx="18"></rect>
+          <text class="diagram-node-label" x="460" y="155" text-anchor="middle">YOLO Detection</text>
+        </g>
+        <line class="diagram-arrow" x1="530" y1="160" x2="600" y2="160"></line>
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="610" y="120" width="130" height="80" rx="18"></rect>
+          <text class="diagram-node-label" x="675" y="155" text-anchor="middle">Violation Report</text>
+        </g>
+      </svg>
+      <p class="diagram-caption">Hover or focus each node to follow the surveillance pipeline from frames to violation reporting.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>API Documentation</h2>
+      <div class="detail-grid">
+        <div>
+          <h3>POST /detect</h3>
+          <p>Accepts video frames or images and returns detected objects and violation labels.</p>
+        </div>
+        <div>
+          <h3>GET /status</h3>
+          <p>Reports whether the detection service is operational and which model version is active.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Challenges</h2>
+      <ul class="detail-list">
+        <li>Variable video quality and lighting conditions.</li>
+        <li>Fast-moving objects and partial occlusions.</li>
+        <li>Maintaining reliable inference in real-time contexts.</li>
+      </ul>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Results</h2>
+      <p>The system demonstrated a strong proof-of-concept for automated roadway monitoring and showed how vision models can support public safety workflows.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Lessons Learned</h2>
+      <p>Computer vision projects benefit from careful data quality, augmentation, and a strong focus on edge cases that affect real-world performance.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Future Improvements</h2>
+      <p>Future improvements include multi-camera support, stronger tracking across frames, and smarter incident summarization.</p>
+    </section>
+  </main>
+</body>
+</html>

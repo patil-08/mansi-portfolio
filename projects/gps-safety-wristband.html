@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPS Safety Wristband | Project Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="project-detail-page">
+  <header class="project-detail-header">
+    <a class="back-link" href="../index.html#projects">← Back to portfolio</a>
+  </header>
+
+  <main class="project-detail-main">
+    <section class="project-detail-hero glass-card">
+      <div>
+        <p class="eyebrow">Project Case Study</p>
+        <h1>GPS Safety Wristband</h1>
+        <p class="section-copy">A wearable safety system designed to broadcast location and trigger emergency alerts through a simple, dependable mobile-connected flow.</p>
+        <div class="project-detail-meta">
+          <span class="status-pill completed">Completed</span>
+          <span>Arduino • Firebase • Dart • Mobile</span>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-small btn-ghost" href="https://github.com/patil-08" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn btn-small btn-primary" href="https://github.com/patil-08" target="_blank" rel="noopener noreferrer">Live Demo</a>
+        </div>
+      </div>
+      <div class="project-detail-hero-visual">
+        <div class="project-detail-metric-card">
+          <strong>Live</strong>
+          <span>tracking support</span>
+        </div>
+        <div class="project-detail-metric-card">
+          <strong>Instant</strong>
+          <span>alert transmission</span>
+        </div>
+        <div class="project-detail-metric-card">
+          <strong>Mobile</strong>
+          <span>connected interface</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Overview</h2>
+      <p>The wristband combines hardware and software to create a simple emergency-response experience with live location visibility and fast alert trigger support.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Business Problem</h2>
+      <p>Safety-focused products need dependable, lightweight hardware and backend support so alerts can be sent quickly when a user needs help.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Objectives</h2>
+      <ul class="detail-list">
+        <li>Enable quick emergency communication.</li>
+        <li>Provide location visibility for trusted contacts.</li>
+        <li>Keep the solution lightweight and practical.</li>
+      </ul>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Dataset</h2>
+      <p>Device telemetry, location checks, and test-case event logs were used to validate the safety flow and alert behavior.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Data Cleaning</h2>
+      <p>Signal noise was filtered and inconsistent location samples were normalized to make the event flow clearer and more stable.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>EDA</h2>
+      <p>EDA focused on signal reliability, connection stability, and the timing of alert transmission during test scenarios.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Feature Engineering</h2>
+      <p>Rule-based event triggers and location-based state features were designed to make emergency behavior responsive and predictable.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Model Selection</h2>
+      <p>No complex ML model was required; the system prioritized reliable event handling and hardware-backed logic over prediction complexity.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Training</h2>
+      <p>Testing and calibration were used to refine signal thresholds and reliability across simulated emergency scenarios.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Evaluation</h2>
+      <p>Evaluation focused on alert latency, location accuracy, and the consistency of the user experience during operation.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Deployment</h2>
+      <p>The system was designed as a functional prototype, with backend support and a mobile-connected dashboard to demonstrate the safety workflow.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Architecture Diagram</h2>
+      <svg class="architecture-svg" viewBox="0 0 760 320" role="img" aria-label="GPS safety wristband architecture diagram">
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+            <path d="M0,0 L10,4 L0,8 z" fill="#67e8f9"></path>
+          </marker>
+        </defs>
+        <line class="diagram-arrow" x1="92" y1="160" x2="162" y2="160"></line>
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="20" y="120" width="140" height="80" rx="18"></rect>
+          <text class="diagram-node-label" x="90" y="155" text-anchor="middle">Wearable</text>
+        </g>
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="170" y="120" width="140" height="80" rx="18"></rect>
+          <text class="diagram-node-label" x="240" y="155" text-anchor="middle">BLE Gateway</text>
+        </g>
+        <line class="diagram-arrow" x1="310" y1="160" x2="380" y2="160"></line>
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="390" y="120" width="140" height="80" rx="18"></rect>
+          <text class="diagram-node-label" x="460" y="155" text-anchor="middle">Firebase</text>
+        </g>
+        <line class="diagram-arrow" x1="530" y1="160" x2="600" y2="160"></line>
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="610" y="120" width="130" height="80" rx="18"></rect>
+          <text class="diagram-node-label" x="675" y="155" text-anchor="middle">Alert Flow</text>
+        </g>
+      </svg>
+      <p class="diagram-caption">Hover or focus each node to trace how safety events move from device to response.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>API Documentation</h2>
+      <div class="detail-grid">
+        <div>
+          <h3>POST /alert</h3>
+          <p>Triggers an emergency event and pushes location details to connected support channels.</p>
+        </div>
+        <div>
+          <h3>GET /device-status</h3>
+          <p>Returns live connectivity and device readiness information for monitoring workflows.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Challenges</h2>
+      <ul class="detail-list">
+        <li>Ensuring reliable performance under practical hardware constraints.</li>
+        <li>Keeping the design simple enough for real-world use.</li>
+        <li>Making alerting dependable with minimal latency.</li>
+      </ul>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Results</h2>
+      <p>The prototype successfully demonstrated how hardware, cloud services, and mobile interfaces can work together to support emergency safety use cases.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Lessons Learned</h2>
+      <p>For safety-focused products, the quality of the experience is often defined by reliability, feedback clarity, and ease of activation under pressure.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Future Improvements</h2>
+      <p>Future improvements include enhanced battery efficiency, richer location insights, and stronger alert escalation paths.</p>
+    </section>
+  </main>
+</body>
+</html>

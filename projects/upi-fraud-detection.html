@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UPI Fraud Detection System | Project Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="project-detail-page">
+  <header class="project-detail-header">
+    <a class="back-link" href="../index.html#projects">← Back to portfolio</a>
+  </header>
+
+  <main class="project-detail-main">
+    <section class="project-detail-hero glass-card">
+      <div>
+        <p class="eyebrow">Project Case Study</p>
+        <h1>UPI Fraud Detection System</h1>
+        <p class="section-copy">A production-minded fraud monitoring platform that combines streaming data, explainable risk scoring, and operations-focused alerting for UPI transaction flows.</p>
+        <div class="project-detail-meta">
+          <span class="status-pill live">Live</span>
+          <span>Python • PySpark • FastAPI • MLflow</span>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-small btn-ghost" href="https://github.com/patil-08/upi-fraud-detection" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="btn btn-small btn-primary" href="https://github.com/patil-08/upi-fraud-detection" target="_blank" rel="noopener noreferrer">Live Demo</a>
+        </div>
+      </div>
+      <div class="project-detail-hero-visual">
+        <div class="project-detail-metric-card">
+          <strong>500K+</strong>
+          <span>transactions processed</span>
+        </div>
+        <div class="project-detail-metric-card">
+          <strong>94%</strong>
+          <span>fraud recall</span>
+        </div>
+        <div class="project-detail-metric-card">
+          <strong>2.4x</strong>
+          <span>faster review cycle</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Overview</h2>
+      <p>The system was built to analyze transaction behavior in near-real time and flag suspicious patterns before losses escalate. It blends batch analytics and streaming-style decisioning with a lightweight API for downstream fraud teams.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Business Problem</h2>
+      <p>Fraud teams needed a reliable way to uncover suspicious UPI transactions without overwhelming analysts with false positives. The main challenge was balancing recall, explainability, and operational speed.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Objectives</h2>
+      <ul class="detail-list">
+        <li>Reduce financial losses from fraudulent transactions.</li>
+        <li>Improve alert quality for review teams.</li>
+        <li>Create an explainable prediction workflow that analysts could trust.</li>
+      </ul>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Dataset</h2>
+      <p>Historical transaction logs and labeled fraud outcomes were used to model behavioral risk. The dataset included velocity features, merchant attributes, location signals, and transaction metadata.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Data Cleaning</h2>
+      <p>Missing values were standardized, invalid transaction records were removed, and categorical variables were normalized. Feature windows were also created to capture behavior over time rather than single-event activity.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>EDA</h2>
+      <p>Exploratory analysis uncovered strong patterns in transaction frequency, device shifts, amount anomalies, and merchant risk clusters. These findings informed the feature design and monitoring thresholds.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Feature Engineering</h2>
+      <p>Engineered features included amount deviation, rapid transaction bursts, merchant history, unusual geolocation changes, and time-based behavior. These signals were aggregated into rolling windows for stronger temporal context.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Model Selection</h2>
+      <p>Gradient boosting and tree-based ensemble methods were compared against simpler baselines. The final choice prioritized precision-recall balance and stability under class imbalance.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Training</h2>
+      <p>Training used stratified splits and cross-validated tuning to reduce variance. Model experiments were tracked in MLflow to support reproducibility and compare threshold settings.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Evaluation</h2>
+      <p>Evaluation focused on recall, false-positive rate, and calibration. Threshold tuning was adjusted so risky transactions would be surfaced quickly while keeping analyst workload manageable.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Deployment</h2>
+      <p>The trained scoring pipeline was exposed through a FastAPI service and packaged for lightweight deployment. It supports automated retraining triggers and monitoring hooks for new fraud patterns.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Architecture Diagram</h2>
+      <svg class="architecture-svg" viewBox="0 0 760 320" role="img" aria-label="Fraud detection system architecture diagram">
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+            <path d="M0,0 L10,4 L0,8 z" fill="#67e8f9"></path>
+          </marker>
+        </defs>
+        <line class="diagram-arrow" x1="92" y1="160" x2="162" y2="160"></line>
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="20" y="120" width="140" height="80" rx="18"></rect>
+          <text class="diagram-node-label" x="90" y="155" text-anchor="middle">User</text>
+        </g>
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="170" y="120" width="140" height="80" rx="18"></rect>
+          <text class="diagram-node-label" x="240" y="155" text-anchor="middle">Frontend</text>
+        </g>
+        <line class="diagram-arrow" x1="310" y1="160" x2="380" y2="160"></line>
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="390" y="120" width="140" height="80" rx="18"></rect>
+          <text class="diagram-node-label" x="460" y="155" text-anchor="middle">FastAPI</text>
+        </g>
+        <line class="diagram-arrow" x1="530" y1="160" x2="600" y2="160"></line>
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="610" y="120" width="130" height="80" rx="18"></rect>
+          <text class="diagram-node-label" x="675" y="155" text-anchor="middle">ML Scoring</text>
+        </g>
+        <line class="diagram-arrow" x1="675" y1="200" x2="675" y2="250"></line>
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="600" y="250" width="150" height="44" rx="16"></rect>
+          <text class="diagram-node-label" x="675" y="279" text-anchor="middle">Alert Dashboard</text>
+        </g>
+      </svg>
+      <p class="diagram-caption">Hover or focus each node to explore the flow from requests to fraud scoring and alerts.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>API Documentation</h2>
+      <div class="detail-grid">
+        <div>
+          <h3>POST /score</h3>
+          <p>Accepts transaction payloads and returns fraud risk, confidence, and feature explanation.</p>
+        </div>
+        <div>
+          <h3>GET /health</h3>
+          <p>Provides system health and model version details for monitoring pipelines.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Challenges</h2>
+      <ul class="detail-list">
+        <li>Highly imbalanced fraud data.</li>
+        <li>Need for interpretable results rather than opaque scores.</li>
+        <li>Operational constraints around latency and review workflows.</li>
+      </ul>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Results</h2>
+      <p>The project delivered a structured fraud screening workflow that improved review efficiency while keeping alert quality high. It also established a scalable foundation for future anomaly detection work.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Lessons Learned</h2>
+      <p>Model performance matters, but deployment clarity matters just as much. Good fraud systems depend on end-to-end operational design, clear thresholds, and strong analyst feedback loops.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Future Improvements</h2>
+      <p>Future work includes streaming inference, more adaptive feature drift monitoring, and richer case-based explanations for review agents.</p>
+    </section>
+  </main>
+</body>
+</html>
