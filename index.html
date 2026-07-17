@@ -101,24 +101,24 @@
           <div class="slbl">B.Tech CGPA</div>
         </div>
         <div class="sc">
-          <div class="snum" data-target="94" data-suffix="%" id="c1">0</div>
-          <div class="slbl">UPI Fraud Detection Accuracy</div>
+          <div class="snum" data-target="5" data-suffix="" id="c1">0</div>
+          <div class="slbl">News Categories</div>
         </div>
         <div class="sc">
-          <div class="snum" data-target="18" data-suffix="%" id="c2">0</div>
-          <div class="slbl">Precision Improvement</div>
+          <div class="snum" data-target="70" data-suffix="B" id="c2">0</div>
+          <div class="slbl">Groq Llama 3.3 Model</div>
         </div>
         <div class="sc">
-          <div class="snum" data-target="500" data-suffix="K+" id="c3">0</div>
-          <div class="slbl">Transactions Ingested</div>
+          <div class="snum" data-target="30" data-suffix="d" id="c3">0</div>
+          <div class="slbl">SKU Predictions Window</div>
         </div>
         <div class="sc">
-          <div class="snum" data-target="30" data-suffix="d" id="c4">0</div>
-          <div class="slbl">SKU-level Predictions Window</div>
+          <div class="snum" data-target="15" data-suffix="M+" id="c4">0</div>
+          <div class="slbl">NeuralRetail Txns</div>
         </div>
         <div class="sc">
-          <div class="snum" data-target="15" data-suffix="M+" id="c5">0</div>
-          <div class="slbl">NeuralRetail Txns Processed</div>
+          <div class="snum" data-target="100" data-suffix="%" id="c5">0</div>
+          <div class="slbl">Automated News Delivery</div>
         </div>
       </div>
     </section>
@@ -160,39 +160,40 @@
     <section class="sec" id="projects" style="padding-top:1.5rem">
       <div class="sec-tag">PROJECTS</div>
       <div class="sec-title">AI Applications & Systems</div>
-      <div class="sec-sub">// Click a card to view case study details</div>
-      <div class="sec-badges">
-        <span class="sec-badge sb-agentic" onclick="openModal('loan')"><span class="badge-dot"></span>Agentic
+      <div class="sec-sub">// Click a card to view       <div class="sec-badges">
+        <span class="sec-badge sb-agentic" onclick="openModal('newsly')"><span class="badge-dot"></span>AI News
+          Agent</span>
+        <span class="sec-badge sb-genai" onclick="openModal('loan')"><span class="badge-dot"></span>Agentic
           Chatbot</span>
         <span class="sec-badge sb-yolo" onclick="openModal('road')"><span class="badge-dot"></span>Computer
           Vision</span>
-        <span class="sec-badge sb-spark" onclick="openModal('upi')"><span class="badge-dot"></span>Large-scale
-          Processing</span>
+        <span class="sec-badge sb-spark" onclick="openModal('ecommerce')"><span class="badge-dot"></span>E-Commerce</span>
         <span class="sec-badge sb-genai" onclick="openModal('neuralretail')"><span class="badge-dot"></span>Deep
           Learning</span>
       </div>
       <div class="proj-grid">
 
-        <!-- UPI Fraud Detection -->
-        <div class="pc" onclick="openModal('upi')">
+        <!-- Newsly – AI-Powered Daily News Digest Agent -->
+        <div class="pc" onclick="openModal('newsly')">
           <div class="pc-head">
             <div class="pc-icon-row">
-              <div class="pc-icon" style="background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3)">💳
+              <div class="pc-icon" style="background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3)">📰
               </div>
-              <span class="pc-tag">PySpark · ML · FastAPI</span>
+              <span class="pc-tag">Llama 3.3 · FastAPI · SMTP</span>
             </div>
-            <div class="pc-title">UPI Fraud Detection System</div>
-            <div class="pc-desc">Large-scale pipeline detecting fraudulent transactions with 94% accuracy. Processed
-              500K+ transaction datasets utilizing Random Forest and Logistic Regression. Deployed as a web dashboard.
-            </div>
+            <div class="pc-title">Newsly – AI-Powered News Agent</div>
+            <div class="pc-desc">AI-powered news aggregation platform fetching, summarizing news across 5 categories with Groq Llama 3.3-70B model, sending daily digests via Gmail SMTP & automated by GitHub Actions.</div>
           </div>
-          <div class="tags-row"><span class="tag">PySpark</span><span class="tag">Scikit-learn</span><span
-              class="tag">FastAPI</span><span class="tag">Streamlit</span><span class="tag">Python</span></div>
+          <div class="tags-row"><span class="tag">FastAPI</span><span class="tag">Groq API</span><span
+              class="tag">Llama 3.3</span><span class="tag">GitHub Actions</span><span class="tag">Python</span></div>
           <div class="pc-foot">
             <button class="pbt primary">▶ Details</button>
             <button class="pbt"
-              onclick="event.stopPropagation();window.open('https://github.com/patil-08/upi-fraud-detection.git')"
+              onclick="event.stopPropagation();window.open('https://github.com/patil-08/Newsly')"
               data-tip="Opens GitHub">↗ GitHub</button>
+            <button class="pbt"
+              onclick="event.stopPropagation();window.open('https://newsly-b74f.onrender.com/')"
+              data-tip="Live Demo">🚀 Live</button>
           </div>
         </div>
 
@@ -213,7 +214,7 @@
           <div class="pc-foot">
             <button class="pbt primary">▶ Details</button>
             <button class="pbt"
-              onclick="event.stopPropagation();window.open('https://github.com/patil-08/upi-fraud-detection.git')"
+              onclick="event.stopPropagation();window.open('https://github.com/patil-08/loan-approval-ml.git')"
               data-tip="Opens GitHub">↗ GitHub</button>
             <button class="pbt"
               onclick="event.stopPropagation();window.open('https://loan-approval-ml-hmhp.onrender.com')"
@@ -240,25 +241,6 @@
             <button class="pbt"
               onclick="event.stopPropagation();window.open('https://github.com/patil-08/roadsaftetydetection.git')"
               data-tip="Opens GitHub">↗ GitHub</button>
-          </div>
-        </div>
-
-        <!-- Movie Review API -->
-        <div class="pc" onclick="openModal('movie')">
-          <div class="pc-head">
-            <div class="pc-icon-row">
-              <div class="pc-icon" style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3)">🎬
-              </div>
-              <span class="pc-tag">Django Ninja · REST API · MySQL</span>
-            </div>
-            <div class="pc-title">Movie Review API Engine</div>
-            <div class="pc-desc">High-performance RESTful API with structured schema verification. Features CRUD
-              operations, MySQL backend storage, and thorough Postman endpoint suites.</div>
-          </div>
-          <div class="tags-row"><span class="tag">Django Ninja</span><span class="tag">MySQL</span><span
-              class="tag">Postman</span><span class="tag">Python</span></div>
-          <div class="pc-foot">
-            <button class="pbt primary">▶ Details</button>
           </div>
         </div>
 
@@ -548,54 +530,53 @@
 
   <!-- PROJECT CASE STUDY MODALS -->
 
-  <!-- UPI Modal -->
-  <div class="overlay" id="m-upi">
+  <!-- Newsly Modal -->
+  <div class="overlay" id="m-newsly">
     <div class="modal">
       <div class="mh">
         <div style="display:flex;align-items:center;gap:0.75rem">
-          <span style="font-size:20px">💳</span>
+          <span style="font-size:20px">📰</span>
           <div>
-            <div style="font-size:1rem;font-weight:700;color:var(--t0)">UPI Fraud Detection System</div>
-            <div style="font-size:11px;color:var(--t2);font-family:var(--mono)">Large-scale ML classification pipeline
-            </div>
+            <div style="font-size:1rem;font-weight:700;color:var(--t0)">Newsly – AI Daily News Agent</div>
+            <div style="font-size:11px;color:var(--t2);font-family:var(--mono)">AI news aggregation & summarization</div>
           </div>
         </div>
-        <button class="mcl" onclick="closeModal('upi')">✕ Close</button>
+        <button class="mcl" onclick="closeModal('newsly')">✕ Close</button>
       </div>
       <div class="mb">
         <div class="m2" style="margin-bottom:1.25rem">
           <div>
             <div class="mlbl">What it does</div>
-            <div class="bul">Identifies fraudulent UPI transfers using <span class="hl">Random Forest</span> &amp; <span
-                class="hl">Logistic Regression</span>.</div>
-            <div class="bul">Achieved <span class="hl">94% classification accuracy</span> on massive transaction sets.
-            </div>
-            <div class="bul">Features distributed database ingestion via <span class="hl">PySpark</span>, improving
-              model speed.</div>
-            <div class="bul">Features feature engineering logic (improving precision metrics by <span
-                class="hl">18%</span>).</div>
+            <div class="bul">Aggregates global headlines from Google News RSS feeds daily.</div>
+            <div class="bul">Deduplicates stories using headline token hashing to skip repetitive reports.</div>
+            <div class="bul">Synthesizes short, clear summaries using <span class="hl">Groq Llama 3.3-70B</span>.</div>
+            <div class="bul">Delivers beautifully formatted, responsive digests via Gmail SMTP & displays on a web dashboard.</div>
+            <div class="bul">Fully automated via GitHub Actions cron routines.</div>
           </div>
           <div>
             <div class="mlbl">Technologies</div>
             <div style="display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:1rem">
-              <span class="tag">PySpark</span><span class="tag">Scikit-learn</span><span class="tag">FastAPI</span><span
-                class="tag">Streamlit</span><span class="tag">Python</span>
+              <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Groq API</span><span class="tag">Llama 3.3</span><span class="tag">SMTP</span><span class="tag">GitHub Actions</span>
             </div>
             <div class="mlbl" style="margin-top:0.75rem">Key Metrics</div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem">
               <div class="metric-box">
-                <div class="mval">94%</div>
-                <div class="mlb2">Inference Acc</div>
+                <div class="mval">5</div>
+                <div class="mlb2">Categories</div>
               </div>
               <div class="metric-box">
-                <div class="mval">500K+</div>
-                <div class="mlb2">Processed Rows</div>
+                <div class="mval">70B</div>
+                <div class="mlb2">Llama Model</div>
               </div>
             </div>
           </div>
         </div>
-        <a href="https://github.com/patil-08/upi-fraud-detection.git" target="_blank" class="btn btn-p"
+        <a href="https://github.com/patil-08/Newsly" target="_blank" class="btn btn-p"
           style="font-size:12px">↗ Open on GitHub</a>
+        <a href="https://newsly-b74f.onrender.com/" target="_blank" class="btn"
+          style="font-size:12px;margin-left:0.5rem">🚀 Live Demo</a>
+        <a href="projects/newsly.html" class="btn"
+          style="font-size:12px;margin-left:0.5rem">📄 Case Study</a>
       </div>
     </div>
   </div>
@@ -608,8 +589,7 @@
           <span style="font-size:20px">📊</span>
           <div>
             <div style="font-size:1rem;font-weight:700;color:var(--t0)">Loan Approval with AI Chatbot</div>
-            <div style="font-size:11px;color:var(--t2);font-family:var(--mono)">Explainable AI underwriter assistant
-            </div>
+            <div style="font-size:11px;color:var(--t2);font-family:var(--mono)">Explainable AI underwriter assistant</div>
           </div>
         </div>
         <button class="mcl" onclick="closeModal('loan')">✕ Close</button>
@@ -620,15 +600,13 @@
             <div class="mlbl">What it does</div>
             <div class="bul">Estimates loan approval rates dynamically using applicant asset profiles.</div>
             <div class="bul">Stores application histories and classifications in <span class="hl">SQLite</span>.</div>
-            <div class="bul">Integrates an <span class="hl">OpenAI API Chatbot</span> to explain reasoning models to
-              applicants.</div>
+            <div class="bul">Integrates an <span class="hl">OpenAI API Chatbot</span> to explain reasoning models to applicants.</div>
             <div class="bul">Streamlit dashboard displays validation grids, accuracy indexes, and charts.</div>
           </div>
           <div>
             <div class="mlbl">Technologies</div>
             <div style="display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:1rem">
-              <span class="tag">FastAPI</span><span class="tag">Scikit-learn</span><span class="tag">OpenAI
-                API</span><span class="tag">SQLite</span><span class="tag">Streamlit</span>
+              <span class="tag">FastAPI</span><span class="tag">Scikit-learn</span><span class="tag">OpenAI API</span><span class="tag">SQLite</span><span class="tag">Streamlit</span>
             </div>
             <div class="mlbl" style="margin-top:0.75rem">Key Metrics</div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem">
@@ -643,10 +621,12 @@
             </div>
           </div>
         </div>
-        <a href="https://github.com/patil-08/upi-fraud-detection.git" target="_blank" class="btn btn-p"
+        <a href="https://github.com/patil-08/loan-approval-ml.git" target="_blank" class="btn btn-p"
           style="font-size:12px">↗ Open on GitHub</a>
         <a href="https://loan-approval-ml-hmhp.onrender.com" target="_blank" class="btn"
           style="font-size:12px;margin-left:0.5rem">🚀 Live Demo</a>
+        <a href="projects/loan-approval-chatbot.html" class="btn"
+          style="font-size:12px;margin-left:0.5rem">📄 Case Study</a>
       </div>
     </div>
   </div>
@@ -659,8 +639,7 @@
           <span style="font-size:20px">🚗</span>
           <div>
             <div style="font-size:1rem;font-weight:700;color:var(--t0)">Road Safety Detection System</div>
-            <div style="font-size:11px;color:var(--t2);font-family:var(--mono)">Real-time computer vision classifier
-            </div>
+            <div style="font-size:11px;color:var(--t2);font-family:var(--mono)">Real-time computer vision classifier</div>
           </div>
         </div>
         <button class="mcl" onclick="closeModal('road')">✕ Close</button>
@@ -670,18 +649,14 @@
           <div>
             <div class="mlbl">What it does</div>
             <div class="bul">Identifies traffic violations (e.g. speeding, lane cutting) from camera streams.</div>
-            <div class="bul">Uses <span class="hl">YOLO</span> model weights for low-latency target bounding boxes.
-            </div>
-            <div class="bul">Pre-processes frames and runs predictive tracking streams with <span
-                class="hl">OpenCV</span>.</div>
-            <div class="bul">Formats statistics and triggers speed dashboards via <span class="hl">Pandas</span> &amp;
-              <span class="hl">Matplotlib</span>.</div>
+            <div class="bul">Uses <span class="hl">YOLO</span> model weights for low-latency target bounding boxes.</div>
+            <div class="bul">Pre-processes frames and runs predictive tracking streams with <span class="hl">OpenCV</span>.</div>
+            <div class="bul">Formats statistics and triggers speed dashboards via <span class="hl">Pandas</span> &amp; <span class="hl">Matplotlib</span>.</div>
           </div>
           <div>
             <div class="mlbl">Technologies</div>
             <div style="display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:1rem">
-              <span class="tag">YOLO</span><span class="tag">OpenCV</span><span class="tag">Pandas</span><span
-                class="tag">Matplotlib</span><span class="tag">Python</span>
+              <span class="tag">YOLO</span><span class="tag">OpenCV</span><span class="tag">Pandas</span><span class="tag">Matplotlib</span><span class="tag">Python</span>
             </div>
             <div class="mlbl" style="margin-top:0.75rem">Performance</div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem">
@@ -698,6 +673,8 @@
         </div>
         <a href="https://github.com/patil-08/roadsaftetydetection.git" target="_blank" class="btn btn-p"
           style="font-size:12px">↗ Open on GitHub</a>
+        <a href="projects/road-safety-detection.html" class="btn"
+          style="font-size:12px;margin-left:0.5rem">📄 Case Study</a>
       </div>
     </div>
   </div>
@@ -758,53 +735,6 @@
     </div>
   </div>
 
-  <!-- Movie API Modal -->
-  <div class="overlay" id="m-movie">
-    <div class="modal">
-      <div class="mh">
-        <div style="display:flex;align-items:center;gap:0.75rem">
-          <span style="font-size:20px">🎬</span>
-          <div>
-            <div style="font-size:1rem;font-weight:700;color:var(--t0)">Movie Review API Engine</div>
-            <div style="font-size:11px;color:var(--t2);font-family:var(--mono)">RESTful API built with Django Ninja
-            </div>
-          </div>
-        </div>
-        <button class="mcl" onclick="closeModal('movie')">✕ Close</button>
-      </div>
-      <div class="mb">
-        <div class="m2" style="margin-bottom:1.25rem">
-          <div>
-            <div class="mlbl">What it does</div>
-            <div class="bul">Exposes fully documented REST endpoints utilizing async request handles.</div>
-            <div class="bul">Enforces data consistency across SQL models mapping schemas in <span
-                class="hl">MySQL</span>.</div>
-            <div class="bul">Tested through <span class="hl">15+ Postman routes</span> validating security, filters, and
-              schema error cases.</div>
-          </div>
-          <div>
-            <div class="mlbl">Technologies</div>
-            <div style="display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:1rem">
-              <span class="tag">Django Ninja</span><span class="tag">MySQL</span><span class="tag">Postman</span><span
-                class="tag">Python</span>
-            </div>
-            <div class="mlbl" style="margin-top:0.75rem">Performance</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem">
-              <div class="metric-box">
-                <div class="mval">FastAPI Speed</div>
-                <div class="mlb2">Via Django Ninja</div>
-              </div>
-              <div class="metric-box">
-                <div class="mval">15+</div>
-                <div class="mlb2">Endpoint Tests</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- E-Commerce Modal -->
   <div class="overlay" id="m-ecommerce">
     <div class="modal">
@@ -849,6 +779,8 @@
         </div>
         <a href="https://github.com/patil-08/Style-Up-E-commerce-Website.git" target="_blank" class="btn btn-p"
           style="font-size:12px">↗ Open on GitHub</a>
+        <a href="projects/style-up-ecommerce.html" class="btn"
+          style="font-size:12px;margin-left:0.5rem">📄 Case Study</a>
       </div>
     </div>
   </div>

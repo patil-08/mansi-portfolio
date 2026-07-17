@@ -267,11 +267,11 @@ const statsObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       setTimeout(() => animCount(document.getElementById('c0'), 8.73, '', 2), 0);
-      setTimeout(() => animCount(document.getElementById('c1'), 94, '%', 0), 100);
-      setTimeout(() => animCount(document.getElementById('c2'), 18, '%', 0), 200);
-      setTimeout(() => animCount(document.getElementById('c3'), 500, 'K+', 0), 300);
-      setTimeout(() => animCount(document.getElementById('c4'), 30, 'd', 0), 400);
-      setTimeout(() => animCount(document.getElementById('c5'), 15, 'M+', 0), 500);
+      setTimeout(() => animCount(document.getElementById('c1'), 5, '', 0), 100);
+      setTimeout(() => animCount(document.getElementById('c2'), 70, 'B', 0), 200);
+      setTimeout(() => animCount(document.getElementById('c3'), 30, 'd', 0), 300);
+      setTimeout(() => animCount(document.getElementById('c4'), 15, 'M+', 0), 400);
+      setTimeout(() => animCount(document.getElementById('c5'), 100, '%', 0), 500);
       statsObs.disconnect();
     }
   });
@@ -284,14 +284,28 @@ if (statsGrid) statsObs.observe(statsGrid);
 (function buildHeatmap() {
   const hm = document.getElementById('heatmap');
   if (!hm) return;
+  
+  // Generate realistic clustered contributions (sine wave + noise)
+  // This simulates active developer sprint cycles and quiet weeks
   for (let i = 0; i < 210; i++) {
     const c = document.createElement('div');
     c.className = 'hc';
-    const r = Math.random();
-    if (r > 0.88) c.classList.add('l4');
-    else if (r > 0.72) c.classList.add('l3');
-    else if (r > 0.58) c.classList.add('l2');
-    else if (r > 0.42) c.classList.add('l1');
+    
+    // Wave patterns to group green blocks (sprints) and gray blocks (rest days)
+    const wave = Math.sin(i * 0.15) * Math.cos(i * 0.05) * 1.5;
+    const noise = (Math.random() - 0.5) * 0.8;
+    const activity = wave + noise;
+    
+    if (activity > 0.8) {
+      c.classList.add('l4'); // High contributions
+    } else if (activity > 0.3) {
+      c.classList.add('l3'); // Medium-high contributions
+    } else if (activity > -0.1) {
+      c.classList.add('l2'); // Medium-low contributions
+    } else if (activity > -0.5) {
+      c.classList.add('l1'); // Low contributions
+    } // Else remains gray
+    
     hm.appendChild(c);
   }
 })();
@@ -329,9 +343,10 @@ const chatResponses = {
   pune: "Yes, Mansi Patil is currently based in Pune, India, and she's open to local as well as remote opportunities.",
   tech: "Her skillset is broad and focused: <br>• Languages: Python, SQL, Java<br>• ML/CV: Scikit-learn, YOLO, OpenCV, PySpark, PyTorch<br>• Backend/APIs: FastAPI, Django Ninja, Node.js, Express<br>• Databases: PostgreSQL, MongoDB, SQLite, MySQL<br>• Generative AI: LangChain, Prompt engineering, RAG, OpenAI API",
   jobs: "Yes, Mansi is graduating in May 2026 and is actively seeking roles as an AI Engineer, ML Engineer, Data Scientist, or Python Developer. You can download her resume using the link on the navigation bar!",
-  upi: "The UPI Fraud Detection project is a Python/PySpark pipeline classifying anomalies across 500K+ transactional patterns with 94% accuracy. It uses Random Forest and Logistic Regression models and features a Streamlit visualization dashboard.",
+  newsly: "Newsly is an AI-Powered Daily News Digest Agent built using Python, FastAPI, Groq API (Llama 3.3-70B), Google News RSS, and Gmail SMTP. It automatically aggregates and summarizes daily news across 5 categories and sends newsletters, with workflows scheduled via GitHub Actions and deployed on Render.",
   loan: "The Loan Predictor application calculates approval probabilities from applicant balance records. It includes an SQLite database for history logging and leverages the OpenAI API to explain decision logic back to users.",
   road: "The Road Safety system uses YOLO weights and OpenCV trackers to process video feeds, identifying lane boundary departures and vehicle speeding violations in real-time.",
+  ecommerce: "The E-Commerce website is Style-Up, a fullstack shop built with Node.js, Express, MongoDB, and JavaScript. It features dynamic catalog querying, persistent state-managed shopping carts, and secure checkout workflows.",
   resume: "You can download Mansi's PDF resume directly using the 'Download PDF' button under the Resume section, or use the cmd+K palette shortcut!",
   email: "You can email Mansi directly at mansipatil71899@gmail.com, or phone her at +91 8767827166."
 };
@@ -359,18 +374,20 @@ function chatAsk(question) {
   
   // Core matching logic
   let lowerQ = question.toLowerCase();
-  let reply = "I am Mansi's AI Assistant. I can help answer queries about her internships (Amdox), projects (UPI Fraud, Loan approvals, Road safety), her core tech stack, and job availability.";
+  let reply = "I am Mansi's AI Assistant. I can help answer queries about her internships (Amdox), projects (Newsly, Loan approvals, Road safety, E-Commerce), her core tech stack, and job availability.";
   
   if (lowerQ.includes('amdox') || lowerQ.includes('internship') || lowerQ.includes('work')) {
     reply = chatResponses.amdox;
   } else if (lowerQ.includes('tech') || lowerQ.includes('stack') || lowerQ.includes('skills')) {
     reply = chatResponses.tech;
-  } else if (lowerQ.includes('upi') || lowerQ.includes('fraud')) {
-    reply = chatResponses.upi;
+  } else if (lowerQ.includes('newsly') || lowerQ.includes('news') || lowerQ.includes('digest')) {
+    reply = chatResponses.newsly;
   } else if (lowerQ.includes('loan') || lowerQ.includes('approve') || lowerQ.includes('credit')) {
     reply = chatResponses.loan;
   } else if (lowerQ.includes('road') || lowerQ.includes('safety') || lowerQ.includes('yolo') || lowerQ.includes('cv')) {
     reply = chatResponses.road;
+  } else if (lowerQ.includes('ecommerce') || lowerQ.includes('e-commerce') || lowerQ.includes('style-up') || lowerQ.includes('cart') || lowerQ.includes('shop')) {
+    reply = chatResponses.ecommerce;
   } else if (lowerQ.includes('job') || lowerQ.includes('opportunity') || lowerQ.includes('hire') || lowerQ.includes('open to')) {
     reply = chatResponses.jobs;
   } else if (lowerQ.includes('pune') || lowerQ.includes('location')) {
@@ -485,10 +502,11 @@ const cpItems = [
   { label: 'Jump to Contact Details', icon: '✉', meta: 'nav', action: () => go('contact') },
   
   // Case Study Launches
-  { label: 'Case Study: UPI Fraud System', icon: '💳', meta: 'study', action: () => openModal('upi') },
+  { label: 'Case Study: Newsly AI News Agent', icon: '📰', meta: 'study', action: () => openModal('newsly') },
   { label: 'Case Study: Loan AI underwriter', icon: '📊', meta: 'study', action: () => openModal('loan') },
   { label: 'Case Study: Road Safety detection', icon: '🚗', meta: 'study', action: () => openModal('road') },
-  { label: 'Case Study: NeuralRetail analytics', icon: '🛒', meta: 'study', action: () => openModal('neuralretail') }
+  { label: 'Case Study: E-Commerce Website', icon: '🛒', meta: 'study', action: () => openModal('ecommerce') },
+  { label: 'Case Study: NeuralRetail analytics', icon: '💼', meta: 'study', action: () => openModal('neuralretail') }
 ];
 
 function openCp() {
