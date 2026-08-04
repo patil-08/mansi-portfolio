@@ -1796,6 +1796,128 @@ footer a:hover {
   color: var(--blue);
 }
 
+/* TECHNICAL SKILLS & TOOLS SECTION */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.sk-card {
+  background: var(--bg1);
+  border: 1px solid var(--bd);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.sk-card:hover {
+  border-color: var(--bd2);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+.sk-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+.sk-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--bg3);
+  border: 1px solid var(--bd2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.sk-title {
+  font-family: var(--title-font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--t0);
+}
+.sk-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.sk-pill {
+  font-size: 12px;
+  font-family: var(--mono);
+  color: var(--t1);
+  background: var(--bg2);
+  border: 1px solid var(--bd);
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.sk-pill:hover {
+  color: var(--t0);
+  border-color: var(--blue);
+  background: var(--dim);
+}
+.sk-pill.highlight {
+  border-color: rgba(59, 130, 246, 0.35);
+  color: var(--blue);
+  background: rgba(59, 130, 246, 0.08);
+}
+.sk-pill.genai {
+  border-color: rgba(139, 92, 246, 0.35);
+  color: var(--purple);
+  background: rgba(139, 92, 246, 0.08);
+}
+.sk-pill.ml {
+  border-color: rgba(16, 185, 129, 0.35);
+  color: var(--green);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+/* CERTIFICATIONS LIST */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+.cert-card {
+  background: var(--bg1);
+  border: 1px solid var(--bd);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cert-card:hover {
+  border-color: var(--bd2);
+  transform: translateY(-2px);
+}
+.cert-org {
+  font-size: 10px;
+  font-family: var(--mono);
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.3rem;
+}
+.cert-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--t0);
+  margin-bottom: 0.4rem;
+}
+.cert-year {
+  font-size: 11px;
+  font-family: var(--mono);
+  color: var(--t2);
+  margin-top: 0.5rem;
+}
+
 /* RESPONSIVE LAYOUT */
 @media(max-width: 780px) {
   nav {
@@ -1820,7 +1942,11 @@ footer a:hover {
   .skills-grid {
     grid-template-columns: 1fr;
   }
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
   .edu-grid {
     grid-template-columns: 1fr;
   }
 }
+

@@ -266,7 +266,7 @@ function animCount(el, target, suf, dec = 0, dur = 1300) {
 const statsObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
-      setTimeout(() => animCount(document.getElementById('c0'), 8.73, '', 2), 0);
+      setTimeout(() => animCount(document.getElementById('c0'), 8.74, '', 2), 0);
       setTimeout(() => animCount(document.getElementById('c1'), 5, '', 0), 100);
       setTimeout(() => animCount(document.getElementById('c2'), 70, 'B', 0), 200);
       setTimeout(() => animCount(document.getElementById('c3'), 30, 'd', 0), 300);
@@ -339,16 +339,17 @@ document.querySelectorAll('.overlay').forEach(o => {
 
 // --- INTERACTIVE AI CHAT ENGINE ---
 const chatResponses = {
-  amdox: "At Amdox Technologies, Mansi contributes to NeuralRetail, an AI-powered retail platform. She has built Prophet/LSTM sales forecast models (30-day horizons), developed churn prediction pipelines (XGBoost/LightGBM) with explainability, and designed automated Delta Lake ETL templates.",
-  pune: "Yes, Mansi Patil is currently based in Pune, India, and she's open to local as well as remote opportunities.",
-  tech: "Her skillset is broad and focused: <br>• Languages: Python, SQL, Java<br>• ML/CV: Scikit-learn, YOLO, OpenCV, PySpark, PyTorch<br>• Backend/APIs: FastAPI, Django Ninja, Node.js, Express<br>• Databases: PostgreSQL, MongoDB, SQLite, MySQL<br>• Generative AI: LangChain, Prompt engineering, RAG, OpenAI API",
-  jobs: "Yes, Mansi is graduating in May 2026 and is actively seeking roles as an AI Engineer, ML Engineer, Data Scientist, or Python Developer. You can download her resume using the link on the navigation bar!",
-  newsly: "Newsly is an AI-Powered Daily News Digest Agent built using Python, FastAPI, Groq API (Llama 3.3-70B), Google News RSS, and Gmail SMTP. It automatically aggregates and summarizes daily news across 5 categories and sends newsletters, with workflows scheduled via GitHub Actions and deployed on Render.",
-  loan: "The Loan Predictor application calculates approval probabilities from applicant balance records. It includes an SQLite database for history logging and leverages the OpenAI API to explain decision logic back to users.",
-  road: "The Road Safety system uses YOLO weights and OpenCV trackers to process video feeds, identifying lane boundary departures and vehicle speeding violations in real-time.",
-  ecommerce: "The E-Commerce website is Style-Up, a fullstack shop built with Node.js, Express, MongoDB, and JavaScript. It features dynamic catalog querying, persistent state-managed shopping carts, and secure checkout workflows.",
-  resume: "You can download Mansi's PDF resume directly using the 'Download PDF' button under the Resume section, or use the cmd+K palette shortcut!",
-  email: "You can email Mansi directly at mansipatil71899@gmail.com, or phone her at +91 8767827166."
+  amdox: "At Amdox Technologies (April 2025 – Present), Mansi contributes as a Data Science Intern to NeuralRetail, an AI-powered retail platform. She built Prophet/LSTM demand forecasting models (30-day horizons), developed churn prediction pipelines (XGBoost/LightGBM) with explainability, and designed automated Spark & Delta Lake ETL pipelines with FastAPI, Redis, MLflow, and Airflow orchestration.",
+  pune: "Yes, Mansi Patil is based in Pune, India, and is open to Machine Learning, Data Science, AI Engineering, and Python Developer roles.",
+  tech: "Her skillset covers:<br>• Languages: Python, SQL<br>• ML & Data Science: Scikit-learn, NumPy, Pandas, Matplotlib, Seaborn, OpenCV, YOLO, PySpark, PyTorch<br>• Backend & DB: FastAPI, Django, Django Ninja, Node.js, REST APIs, Firebase, SQLite, MySQL, MongoDB, PostgreSQL<br>• Generative AI: LLMs, Chat Models, Embedding Models, RAG Concepts, LangChain, OpenAI GPT, Claude, Gemini, Hugging Face, Groq API (Llama 3.3-70B)<br>• DevOps & Tools: Docker, Git, GitHub, Postman, Jupyter Notebook, MLflow",
+  jobs: "Yes! Mansi is a Computer Science graduate (B.Tech CSE, CGPA 8.74/10) with hands-on AI/ML engineering experience. She is actively seeking full-time roles in Python Development, Machine Learning, Data Science, or AI Engineering. Reach out via email or LinkedIn!",
+  newsly: "Newsly is an AI-Powered Daily News Digest Agent built using Python, FastAPI, Docker, Groq API (Llama 3.3-70B), Google News RSS, Gmail SMTP, and GitHub Actions. It automatically aggregates and summarizes daily news across 5 categories (Technology & AI, Finance & Markets, Politics, Sports, Fashion) and sends automated digests, deployed on Render.",
+  loan: "The Loan Approval Prediction System uses Scikit-learn ML models to predict loan eligibility from financial data, storing records in SQLite. Features a FastAPI backend, Streamlit dashboard, and an integrated OpenAI API Chatbot to explain loan approval reasoning.",
+  road: "The AI-Based Road Safety Detection System uses YOLO for real-time traffic violation identification, processing video feeds with OpenCV and executing telemetry analytics using Pandas and Matplotlib.",
+  ecommerce: "The E-Commerce Website (Style-Up) is a full-stack shopping application built using Node.js, MongoDB, Express, and JavaScript featuring product catalog queries, cart management, and secure checkout workflows.",
+  certifications: "Mansi holds 5 professional certifications:<br>1. Deloitte Data Analyst Certificate (2025)<br>2. CSRBOX: Agentic AI – AI Agent Architect (2025)<br>3. Business Intelligence with Advanced Excel & Power BI (2024)<br>4. Oracle Academy Database Management System (2024)<br>5. STTP Master Industry-Grade Python Skills (2024)",
+  resume: "You can view and download Mansi's PDF resume directly using the 'Download PDF' button in the Resume section of the site!",
+  email: "You can contact Mansi directly via email at mansipatil71899@gmail.com, or phone at +91 8767827166. GitHub: https://github.com/patil-08"
 };
 
 let chatSpeech = false;
@@ -374,13 +375,15 @@ function chatAsk(question) {
   
   // Core matching logic
   let lowerQ = question.toLowerCase();
-  let reply = "I am Mansi's AI Assistant. I can help answer queries about her internships (Amdox), projects (Newsly, Loan approvals, Road safety, E-Commerce), her core tech stack, and job availability.";
+  let reply = "I am Mansi's AI Assistant. Ask me about her Amdox internship, projects (Newsly, Loan approval chatbot, Road safety, E-Commerce), certifications, tech skills, or job availability!";
   
-  if (lowerQ.includes('amdox') || lowerQ.includes('internship') || lowerQ.includes('work')) {
+  if (lowerQ.includes('amdox') || lowerQ.includes('internship') || lowerQ.includes('work') || lowerQ.includes('neuralretail')) {
     reply = chatResponses.amdox;
-  } else if (lowerQ.includes('tech') || lowerQ.includes('stack') || lowerQ.includes('skills')) {
+  } else if (lowerQ.includes('tech') || lowerQ.includes('stack') || lowerQ.includes('skills') || lowerQ.includes('tools')) {
     reply = chatResponses.tech;
-  } else if (lowerQ.includes('newsly') || lowerQ.includes('news') || lowerQ.includes('digest')) {
+  } else if (lowerQ.includes('certif') || lowerQ.includes('course') || lowerQ.includes('deloitte') || lowerQ.includes('csrbox')) {
+    reply = chatResponses.certifications;
+  } else if (lowerQ.includes('newsly') || lowerQ.includes('news') || lowerQ.includes('groq') || lowerQ.includes('digest')) {
     reply = chatResponses.newsly;
   } else if (lowerQ.includes('loan') || lowerQ.includes('approve') || lowerQ.includes('credit')) {
     reply = chatResponses.loan;
@@ -388,7 +391,7 @@ function chatAsk(question) {
     reply = chatResponses.road;
   } else if (lowerQ.includes('ecommerce') || lowerQ.includes('e-commerce') || lowerQ.includes('style-up') || lowerQ.includes('cart') || lowerQ.includes('shop')) {
     reply = chatResponses.ecommerce;
-  } else if (lowerQ.includes('job') || lowerQ.includes('opportunity') || lowerQ.includes('hire') || lowerQ.includes('open to')) {
+  } else if (lowerQ.includes('job') || lowerQ.includes('opportunity') || lowerQ.includes('hire') || lowerQ.includes('open to') || lowerQ.includes('role')) {
     reply = chatResponses.jobs;
   } else if (lowerQ.includes('pune') || lowerQ.includes('location')) {
     reply = chatResponses.pune;
@@ -494,6 +497,7 @@ function toggleChatMic() {
 // --- COMMAND PALETTE ENGINE ---
 const cpItems = [
   { label: 'Jump to Home', icon: '🏠', meta: 'nav', action: () => go('home') },
+  { label: 'Jump to Technical Skills & Tools', icon: '🛠️', meta: 'nav', action: () => go('skills') },
   { label: 'View Experience at Amdox', icon: '💼', meta: 'nav', action: () => go('experience') },
   { label: 'View Portfolio Projects', icon: '📁', meta: 'nav', action: () => go('projects') },
   { label: 'Chat with Mansi AI Agent', icon: '⚡', meta: 'chat', action: () => go('chat') },
