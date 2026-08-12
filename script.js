@@ -247,39 +247,6 @@ function showToast(msg, type = 'success', dur = 3500) {
   draw();
 })();
 
-// --- METRIC COUNTERS ---
-function animCount(el, target, suf, dec = 0, dur = 1300) {
-  let start = null;
-  const targetVal = Number(target);
-  function step(ts) {
-    if (!start) start = ts;
-    const p = Math.min((ts - start) / dur, 1);
-    const eased = 1 - Math.pow(1 - p, 3);
-    const v = eased * targetVal;
-    el.textContent = v.toFixed(dec) + suf;
-    if (p < 1) requestAnimationFrame(step);
-    else el.textContent = targetVal.toFixed(dec) + suf;
-  }
-  requestAnimationFrame(step);
-}
-
-const statsObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      setTimeout(() => animCount(document.getElementById('c0'), 8.74, '', 2), 0);
-      setTimeout(() => animCount(document.getElementById('c1'), 5, '', 0), 100);
-      setTimeout(() => animCount(document.getElementById('c2'), 70, 'B', 0), 200);
-      setTimeout(() => animCount(document.getElementById('c3'), 30, 'd', 0), 300);
-      setTimeout(() => animCount(document.getElementById('c4'), 15, 'M+', 0), 400);
-      setTimeout(() => animCount(document.getElementById('c5'), 100, '%', 0), 500);
-      statsObs.disconnect();
-    }
-  });
-}, { threshold: 0.2 });
-
-const statsGrid = document.getElementById('statsGrid');
-if (statsGrid) statsObs.observe(statsGrid);
-
 // --- HEATMAP GENERATOR ---
 (function buildHeatmap() {
   const hm = document.getElementById('heatmap');

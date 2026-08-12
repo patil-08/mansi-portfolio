@@ -384,47 +384,6 @@ canvas#net {
   letter-spacing: 0.5px;
 }
 
-/* STATSGRID */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
-  margin: 1.8rem 0;
-}
-.sc {
-  background: var(--bg2);
-  border: 1px solid var(--bd);
-  border-radius: 12px;
-  padding: 1.25rem;
-  position: relative;
-  overflow: hidden;
-  transition: border-color 0.2s;
-}
-.sc:hover {
-  border-color: var(--bd2);
-}
-.sc::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--blue), transparent);
-}
-.snum {
-  font-family: var(--mono);
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--t0);
-  line-height: 1;
-}
-.slbl {
-  font-size: 11.5px;
-  color: var(--t2);
-  margin-top: 0.5rem;
-}
-
 /* EXPERIENCE & SKILLS */
 .exp-list {
   display: flex;
