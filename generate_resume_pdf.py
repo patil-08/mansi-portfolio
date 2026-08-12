@@ -128,7 +128,7 @@ story.append(Spacer(1, 6))
 
 # EXPERIENCE
 add_section_header("EXPERIENCE")
-exp_title = "<b>Data Science Intern</b> &nbsp;|&nbsp; <b>Amdox Technologies</b> &nbsp;|&nbsp; April 2025 – Present"
+exp_title = "<b>Data Science Intern</b> &nbsp;|&nbsp; <b>Amdox Technologies</b> &nbsp;|&nbsp; April 2026 – Present"
 exp_links = "<b>GitHub:</b> <a href='https://github.com/patil-08/NeuralRetail.git' color='#0000EE'><u>https://github.com/patil-08/NeuralRetail.git</u></a> &nbsp;&nbsp; <b>Live Demo:</b> <a href='https://neuralretail-production-1569.up.railway.app/docs' color='#0000EE'><u>https://neuralretail-production-1569.up.railway.app/docs</u></a>"
 exp_proj = "<b>Project: NeuralRetail – AI-Powered Sales Intelligence and Predictive Analytics Platform</b>"
 
