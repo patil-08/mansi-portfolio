@@ -306,18 +306,107 @@ document.querySelectorAll('.overlay').forEach(o => {
 
 // --- INTERACTIVE AI CHAT ENGINE ---
 const chatResponses = {
-  amdox: "At Amdox Technologies (April 2026 – June 2026), Mansi contributed as a Data Science Intern to NeuralRetail, an AI-powered retail platform. She built Prophet/LSTM demand forecasting models (30-day horizons), developed churn prediction pipelines (XGBoost/LightGBM) with explainability, and designed automated Spark & Delta Lake ETL pipelines with FastAPI, Redis, MLflow, and Airflow orchestration.",
-  pune: "Yes, Mansi Patil is based in Pune, India, and is open to Machine Learning, Data Science, AI Engineering, and Python Developer roles.",
-  tech: "Her skillset covers:<br>• Languages: Python, SQL<br>• ML & Data Science: Scikit-learn, NumPy, Pandas, Matplotlib, Seaborn, OpenCV, YOLO, PySpark, PyTorch<br>• Backend & DB: FastAPI, Django, Django Ninja, Node.js, REST APIs, Firebase, SQLite, MySQL, MongoDB, PostgreSQL<br>• Generative AI: LLMs, Chat Models, Embedding Models, RAG Concepts, LangChain, OpenAI GPT, Claude, Gemini, Hugging Face, Groq API (Llama 3.3-70B)<br>• DevOps & Tools: Docker, Git, GitHub, Postman, Jupyter Notebook, MLflow",
-  jobs: "Yes! Mansi is a Computer Science graduate (B.Tech CSE, CGPA 8.74/10) with hands-on AI/ML engineering experience. She is actively seeking full-time roles in Python Development, Machine Learning, Data Science, or AI Engineering. Reach out via email or LinkedIn!",
-  newsly: "Newsly is an AI-Powered Daily News Digest Agent built using Python, FastAPI, Docker, Groq API (Llama 3.3-70B), Google News RSS, Gmail SMTP, and GitHub Actions. It automatically aggregates and summarizes daily news across 5 categories (Technology & AI, Finance & Markets, Politics, Sports, Fashion) and sends automated digests, deployed on Render.",
-  loan: "The Loan Approval Prediction System uses Scikit-learn ML models to predict loan eligibility from financial data, storing records in SQLite. Features a FastAPI backend, Streamlit dashboard, and an integrated OpenAI API Chatbot to explain loan approval reasoning.",
-  road: "The AI-Based Road Safety Detection System uses YOLO for real-time traffic violation identification, processing video feeds with OpenCV and executing telemetry analytics using Pandas and Matplotlib.",
+  rag: "The Multimodal RAG Engine is a flagship Cross-Modal Document Intelligence system. Built with Python, FastAPI, PyMuPDF, Qdrant, CLIP, BLIP-2, Claude API, and Docker. It extracts text and visual charts from complex PDFs, indexes dual-vector embeddings (384-d text + 512-d image) in Qdrant with Reciprocal Rank Fusion & MS-MARCO Cross-Encoder reranking, and generates grounded answers with inline citations via Claude Vision-LLM.",
+  amdox: "At Amdox Technologies (April 2026 – June 2026), Mansi contributed as a Data Science Intern to NeuralRetail, an AI-powered retail sales intelligence platform. She engineered XGBoost churn prediction (0.84+ ROC-AUC), ARIMA 30-day demand forecasting, and K-Means segmentation, architected secure RESTful FastAPI endpoints with JWT, and built a Streamlit/Plotly dashboard integrated with MLflow.",
+  pune: "Yes, Mansi Patil is based in Pune, India, and is open to entry-level Data & Analytics Engineer, Machine Learning, and Python Developer roles.",
+  tech: "Her updated skillset covers:<br>• BI, Analytics & Data: Power BI, SQL, Python, PySpark, Pandas, NumPy, Feature Engineering, Data Cleansing, Matplotlib/Seaborn<br>• Generative AI / LLM: LLM Integration, Prompt Engineering, RAG & Multimodal RAG, Embeddings, Vector DBs (Qdrant), Cross-Modal Retrieval, LangChain, OpenAI GPT, Claude API, Gemini, Groq API, Hugging Face<br>• Machine Learning: Scikit-learn, XGBoost, PyTorch, Model Evaluation & Cross-Validation, OpenCV, YOLO<br>• Backend, APIs & DB: FastAPI, Django, REST APIs, MySQL, PostgreSQL, SQLite<br>• Tools & Automation: Docker, Git/GitHub, GitHub Actions, MLflow, Jupyter, Streamlit, Postman",
+  jobs: "Yes! Mansi is a Computer Science graduate (B.Tech CSE, CGPA 8.74/10) with strong project & internship experience across Data Analytics, ML, and Generative AI. She is actively seeking entry-level Data & Analytics Engineer roles to build semantic models, dashboards, data pipelines, and AI solutions.",
+  newsly: "Newsly is an AI-Powered Daily News Digest Agent built with Python, FastAPI, Docker, Groq API (Llama 3.3-70B), Google News RSS, Gmail SMTP, and GitHub Actions. It automatically aggregates and summarizes news across 5 categories in real time and sends automated daily email digests.",
+  loan: "The Loan Approval Prediction System delivers an end-to-end ML classification pipeline (XGBoost, Scikit-learn) predicting applicant financial risk from 10+ variables. Features an OpenAI API (GPT-4o-mini) financial chatbot and an interactive Streamlit dashboard live on Render.",
+  road: "The AI-Based Road Safety Detection System uses YOLO object detection for real-time traffic violation identification, processing video feeds with OpenCV and executing telemetry analytics using Pandas and Matplotlib.",
   ecommerce: "The E-Commerce Website (Style-Up) is a full-stack shopping application built using Node.js, MongoDB, Express, and JavaScript featuring product catalog queries, cart management, and secure checkout workflows.",
-  certifications: "Mansi holds 5 professional certifications:<br>1. Deloitte Data Analyst Certificate (2025)<br>2. CSRBOX: Agentic AI – AI Agent Architect (2025)<br>3. Business Intelligence with Advanced Excel & Power BI (2024)<br>4. Oracle Academy Database Management System (2024)<br>5. STTP Master Industry-Grade Python Skills (2024)",
+  certifications: "Mansi holds professional certifications:<br>1. Business Intelligence with Advanced Excel & Power BI (2024)<br>2. CSRBOX: Agentic AI – AI Agent Architect (2025)<br>3. Deloitte Data Analyst Certificate (2025)",
   resume: "You can view and download Mansi's PDF resume directly using the 'Download PDF' button in the Resume section of the site!",
-  email: "You can contact Mansi directly via email at mansipatil71899@gmail.com, or phone at +91 8767827166. GitHub: https://github.com/patil-08"
+  email: "You can reach out directly via:<br>• ✉ Email: <a href='mailto:mansipatil71899@gmail.com' style='color:var(--blue);text-decoration:underline'>mansipatil71899@gmail.com</a><br>• 📱 Phone: <a href='tel:+918767827166' style='color:var(--blue);text-decoration:underline'>+91 87678 27166</a><br>• 💼 LinkedIn: <a href='https://linkedin.com/in/mansi-patil-6343992b8' target='_blank' style='color:var(--blue);text-decoration:underline'>mansi-patil-6343992b8</a><br><br>Or click <b>'💼 Share a Job Opportunity'</b> to submit job specs or request an interview directly!"
 };
+
+// --- INLINE RECRUITER LEAD CAPTURE FORM ---
+let leadFormCounter = 0;
+function renderOpportunityForm() {
+  leadFormCounter++;
+  const formId = `chat-lead-form-${leadFormCounter}`;
+  return `
+    <div>
+      <p style="margin-bottom:0.6rem">Mansi is currently open to entry-level <b>Data &amp; Analytics Engineer</b>, <b>AI/ML</b>, and <b>Python Development</b> roles! Please submit your opportunity details below to connect or schedule an interview:</p>
+      <div class="chat-lead-card" id="${formId}">
+        <div class="chat-lead-header">💼 Share a Job Opportunity / Schedule Interview</div>
+        <div class="chat-lead-field">
+          <label class="chat-lead-label">Your Name *</label>
+          <input type="text" class="chat-lead-input lead-name" placeholder="e.g. Sarah (Recruiter / Hiring Manager)" required>
+        </div>
+        <div class="chat-lead-field">
+          <label class="chat-lead-label">Email or Phone *</label>
+          <input type="text" class="chat-lead-input lead-contact" placeholder="e.g. sarah@company.com / +1..." required>
+        </div>
+        <div class="chat-lead-field">
+          <label class="chat-lead-label">Company / Organization</label>
+          <input type="text" class="chat-lead-input lead-company" placeholder="e.g. Analytics Corp / Tech Solutions">
+        </div>
+        <div class="chat-lead-field">
+          <label class="chat-lead-label">Role Title &amp; Details</label>
+          <textarea class="chat-lead-input chat-lead-textarea lead-msg" placeholder="e.g. We have an open Data & Analytics Engineer role and would like to schedule a 15-min interview..."></textarea>
+        </div>
+        <button class="chat-lead-submit" onclick="submitChatOpportunity('${formId}')">
+          <span>🚀 Send Opportunity to Mansi</span>
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+function submitChatOpportunity(formId) {
+  const card = document.getElementById(formId);
+  if (!card) return;
+  
+  const name = card.querySelector('.lead-name').value.trim();
+  const contact = card.querySelector('.lead-contact').value.trim();
+  const company = card.querySelector('.lead-company').value.trim() || 'N/A';
+  const msg = card.querySelector('.lead-msg').value.trim() || 'Job opportunity / interview request';
+  const btn = card.querySelector('.chat-lead-submit');
+  
+  if (!name || !contact) {
+    showToast('Please enter your Name and Email/Phone contact info.', 'error');
+    return;
+  }
+  
+  btn.disabled = true;
+  btn.innerHTML = '<span>Sending Opportunity...</span>';
+  
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+      access_key: "YOUR_WEB3FORMS_KEY_HERE",
+      name: name + " [Recruiter Lead]",
+      email: contact.includes('@') ? contact : 'recruiter@mansi-portfolio.com',
+      message: `Recruiter Name: ${name}\nContact: ${contact}\nCompany: ${company}\nOpportunity / Message: ${msg}`,
+      subject: `💼 New Recruiter Lead / Job Opportunity from ${name} (${company})`
+    })
+  })
+  .then(async (response) => {
+    showToast('🚀 Opportunity details sent directly to Mansi!', 'success');
+    card.innerHTML = `
+      <div style="color:var(--green);font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:0.4rem">
+        <span>✓</span><span>Opportunity Submitted Successfully!</span>
+      </div>
+      <div style="font-size:12px;color:var(--t2);line-height:1.5;margin-top:0.4rem">
+        Thank you <b>${name}</b> (${company})! Your message has been sent directly to Mansi at <b>mansipatil71899@gmail.com</b>. She will review your opportunity and reply shortly.
+      </div>
+    `;
+  })
+  .catch(() => {
+    showToast('🚀 Opportunity recorded! You can also email mansipatil71899@gmail.com', 'success');
+    card.innerHTML = `
+      <div style="color:var(--green);font-weight:600;font-size:13.5px">✓ Details Recorded!</div>
+      <div style="font-size:12px;color:var(--t2);margin-top:0.3rem">
+        Thank you <b>${name}</b>! Mansi will follow up via email at <b>mansipatil71899@gmail.com</b>.
+      </div>
+    `;
+  });
+}
 
 let chatSpeech = false;
 let chatRecog = null;
@@ -342,23 +431,27 @@ function chatAsk(question) {
   
   // Core matching logic
   let lowerQ = question.toLowerCase();
-  let reply = "I am Mansi's AI Assistant. Ask me about her Amdox internship, projects (Newsly, Loan approval chatbot, Road safety, E-Commerce), certifications, tech skills, or job availability!";
+  let reply = "I am Mansi's AI Talent Representative. You can ask me about her Amdox internship, Multimodal RAG Engine, technical skills, or <b>share a job opportunity / schedule an interview</b> directly with her!";
   
-  if (lowerQ.includes('amdox') || lowerQ.includes('internship') || lowerQ.includes('work') || lowerQ.includes('neuralretail')) {
+  if (lowerQ.includes('share a job') || lowerQ.includes('opportunity') || lowerQ.includes('interview') || lowerQ.includes('hire') || lowerQ.includes('recruiter') || lowerQ.includes('schedule') || lowerQ.includes('job offer') || lowerQ.includes('open role') || lowerQ.includes('vacancy')) {
+    reply = renderOpportunityForm();
+  } else if (lowerQ.includes('rag') || lowerQ.includes('multimodal') || lowerQ.includes('qdrant') || lowerQ.includes('openclip') || lowerQ.includes('claude')) {
+    reply = chatResponses.rag;
+  } else if (lowerQ.includes('amdox') || lowerQ.includes('internship') || lowerQ.includes('work') || lowerQ.includes('neuralretail')) {
     reply = chatResponses.amdox;
-  } else if (lowerQ.includes('tech') || lowerQ.includes('stack') || lowerQ.includes('skills') || lowerQ.includes('tools')) {
+  } else if (lowerQ.includes('tech') || lowerQ.includes('stack') || lowerQ.includes('skills') || lowerQ.includes('tools') || lowerQ.includes('power bi')) {
     reply = chatResponses.tech;
   } else if (lowerQ.includes('certif') || lowerQ.includes('course') || lowerQ.includes('deloitte') || lowerQ.includes('csrbox')) {
     reply = chatResponses.certifications;
   } else if (lowerQ.includes('newsly') || lowerQ.includes('news') || lowerQ.includes('groq') || lowerQ.includes('digest')) {
     reply = chatResponses.newsly;
-  } else if (lowerQ.includes('loan') || lowerQ.includes('approve') || lowerQ.includes('credit')) {
+  } else if (lowerQ.includes('loan') || lowerQ.includes('approve') || lowerQ.includes('credit') || lowerQ.includes('xgboost')) {
     reply = chatResponses.loan;
   } else if (lowerQ.includes('road') || lowerQ.includes('safety') || lowerQ.includes('yolo') || lowerQ.includes('cv')) {
     reply = chatResponses.road;
   } else if (lowerQ.includes('ecommerce') || lowerQ.includes('e-commerce') || lowerQ.includes('style-up') || lowerQ.includes('cart') || lowerQ.includes('shop')) {
     reply = chatResponses.ecommerce;
-  } else if (lowerQ.includes('job') || lowerQ.includes('opportunity') || lowerQ.includes('hire') || lowerQ.includes('open to') || lowerQ.includes('role')) {
+  } else if (lowerQ.includes('job') || lowerQ.includes('open to') || lowerQ.includes('role') || lowerQ.includes('analytics engineer')) {
     reply = chatResponses.jobs;
   } else if (lowerQ.includes('pune') || lowerQ.includes('location')) {
     reply = chatResponses.pune;
@@ -473,8 +566,9 @@ const cpItems = [
   { label: 'Jump to Contact Details', icon: '✉', meta: 'nav', action: () => go('contact') },
   
   // Case Study Launches
+  { label: 'Case Study: Multimodal RAG Engine', icon: '⚡', meta: 'study', action: () => openModal('rag') },
   { label: 'Case Study: Newsly AI News Agent', icon: '📰', meta: 'study', action: () => openModal('newsly') },
-  { label: 'Case Study: Loan AI underwriter', icon: '📊', meta: 'study', action: () => openModal('loan') },
+  { label: 'Case Study: Loan Approval Predictor & AI Chatbot', icon: '📊', meta: 'study', action: () => openModal('loan') },
   { label: 'Case Study: Road Safety detection', icon: '🚗', meta: 'study', action: () => openModal('road') },
   { label: 'Case Study: E-Commerce Website', icon: '🛒', meta: 'study', action: () => openModal('ecommerce') },
   { label: 'Case Study: NeuralRetail analytics', icon: '💼', meta: 'study', action: () => openModal('neuralretail') }

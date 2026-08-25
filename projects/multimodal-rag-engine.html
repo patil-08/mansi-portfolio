@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multimodal RAG Engine — Cross-Modal Document Intelligence System | Project Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="project-detail-page">
+  <header class="project-detail-header">
+    <a class="back-link" href="../index.html#projects">← Back to portfolio</a>
+  </header>
+
+  <main class="project-detail-main">
+    <section class="project-detail-hero glass-card">
+      <div>
+        <p class="eyebrow">Project Case Study</p>
+        <h1>Multimodal RAG Engine — Cross-Modal Document Intelligence</h1>
+        <p class="section-copy">An enterprise-grade document intelligence system performing joint retrieval of dense text and embedded visual figures from complex PDF reports using dual-vector search, Reciprocal Rank Fusion, MS-MARCO Cross-Encoder reranking, and Claude API Vision-LLM generation.</p>
+        <div class="project-detail-meta">
+          <span class="status-pill live">Production Ready</span>
+          <span>Python • FastAPI • Qdrant • CLIP • BLIP-2 • Claude API • Docker</span>
+        </div>
+        <div class="card-actions">
+          <a class="btn btn-small btn-ghost" href="https://github.com/patil-08" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Overview</h2>
+      <p>Traditional RAG systems fail when enterprise documents contain critical information embedded in charts, diagrams, tables, and multi-page graphics. The Multimodal RAG Engine extracts both text and high-DPI page images from complex PDFs using PyMuPDF, indexes them into a dual-vector Qdrant store combining text and visual embeddings, and synthesizes answers using Claude API Vision-LLM with grounded page citations.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Objectives</h2>
+      <ul class="detail-list">
+         <li>Extract high-resolution visual charts, tables, and sentence-aware text chunks (~300 chars) to eliminate mid-sentence breaks.</li>
+         <li>Construct a dual-vector index fusing SentenceTransformer (384-d text) and OpenCLIP (512-d image) embeddings via Reciprocal Rank Fusion.</li>
+         <li>Cut retrieved noise by applying a dynamic relevance cutoff (≥ 0.40) and MS-MARCO Cross-Encoder reranking in Qdrant to 3 high-precision context chunks per query.</li>
+         <li>Prevent LLM hallucinations using XML-based prompt injection defenses and strict inline page citation logic in Claude API.</li>
+      </ul>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>System Architecture</h2>
+      <svg class="architecture-svg" viewBox="0 0 800 340" role="img" aria-label="Multimodal RAG Engine Architecture">
+        <defs>
+          <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+            <path d="M0,0 L10,4 L0,8 z" fill="#3b82f6"></path>
+          </marker>
+        </defs>
+        
+        <!-- Nodes -->
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="20" y="130" width="130" height="80" rx="12"></rect>
+          <text class="diagram-node-label" x="85" y="160" text-anchor="middle">PyMuPDF</text>
+          <text class="diagram-node-label" x="85" y="180" text-anchor="middle" font-size="10" fill="#6d7e9c">Text + Chart PDF Ingest</text>
+        </g>
+        
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="190" y="130" width="150" height="80" rx="12"></rect>
+          <text class="diagram-node-label" x="265" y="155" text-anchor="middle">Dual Vectorizer</text>
+          <text class="diagram-node-label" x="265" y="175" text-anchor="middle" font-size="10" fill="#6d7e9c">Text (384d) + CLIP (512d)</text>
+        </g>
+        
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="380" y="130" width="150" height="80" rx="12"></rect>
+          <text class="diagram-node-label" x="455" y="155" text-anchor="middle">Qdrant Vector DB</text>
+          <text class="diagram-node-label" x="455" y="175" text-anchor="middle" font-size="10" fill="#6d7e9c">RRF + MS-MARCO Rerank</text>
+        </g>
+        
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="570" y="130" width="200" height="80" rx="12"></rect>
+          <text class="diagram-node-label" x="670" y="155" text-anchor="middle">Claude Vision LLM</text>
+          <text class="diagram-node-label" x="670" y="175" text-anchor="middle" font-size="10" fill="#6d7e9c">Grounded XML + Citations</text>
+        </g>
+
+        <line class="diagram-arrow" x1="150" y1="170" x2="190" y2="170" stroke="#28315c" stroke-width="2" marker-end="url(#arrowhead)"></line>
+        <line class="diagram-arrow" x1="340" y1="170" x2="380" y2="170" stroke="#28315c" stroke-width="2" marker-end="url(#arrowhead)"></line>
+        <line class="diagram-arrow" x1="530" y1="170" x2="570" y2="170" stroke="#28315c" stroke-width="2" marker-end="url(#arrowhead)"></line>
+
+        <!-- Fast API Box -->
+        <g class="diagram-node-group" tabindex="0">
+          <rect class="diagram-node-shape" x="190" y="30" width="340" height="50" rx="8"></rect>
+          <text class="diagram-node-label" x="360" y="55" text-anchor="middle">FastAPI Threadpool Async Backend + Streamlit UI</text>
+        </g>
+        <line class="diagram-arrow" x1="360" y1="80" x2="360" y2="130" stroke="#28315c" stroke-dasharray="4" stroke-width="2" marker-end="url(#arrowhead)"></line>
+      </svg>
+      <p class="diagram-caption">End-to-end processing pipeline: PyMuPDF PDF extraction -> Dual Text (SentenceTransformer) & Visual (OpenCLIP) vector generation -> Reciprocal Rank Fusion & MS-MARCO Reranking in Qdrant -> Grounded XML Generation via Claude Vision-LLM.</p>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Key Implementation Details</h2>
+      <ul class="detail-list">
+        <li><strong>Sentence-Aware PDF Chunking</strong>: Custom PyMuPDF chunker enforcing ~300 character boundaries aligned to sentence terminators, preventing fragmented context.</li>
+        <li><strong>Reciprocal Rank Fusion & Reranking</strong>: Fuses rank scores from text embeddings and visual embeddings before applying an MS-MARCO Cross-Encoder, isolating the 3 highest relevance chunks.</li>
+        <li><strong>Hallucination Defense</strong>: Claude API prompts wrapped in XML tags enforcing refusal logic when context confidence drops below thresh (≥ 0.40).</li>
+        <li><strong>Backend Optimization</strong>: FastAPI server utilizes threadpool background task execution and model pre-warming on startup for immediate query handling.</li>
+      </ul>
+    </section>
+
+    <section class="detail-section glass-card">
+      <h2>Results</h2>
+      <p>Achieved high precision cross-modal document retrieval with sub-second vector search performance in Qdrant, cutting retrieved context noise by over 60% while maintaining 100% citation grounding across multi-page technical reports.</p>
+    </section>
+  </main>
+</body>
+</html>
