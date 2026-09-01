@@ -142,7 +142,7 @@
         </div>
 
         <!-- Generative AI / LLM -->
-        <div class="sk-card" style="grid-column: span 2">
+        <div class="sk-card sk-card-span-2">
           <div class="sk-head">
             <div class="sk-icon">✨</div>
             <div class="sk-title">Generative AI / LLM</div>
@@ -223,10 +223,12 @@
       <div class="sec-sub">// Click a card to view architectural details &amp; case studies</div>
       <div class="sec-badges">
         <span class="sec-badge sb-genai" onclick="openModal('rag')"><span class="badge-dot"></span>Multimodal RAG</span>
+        <span class="sec-badge sb-spark" onclick="openModal('upifraud')"><span class="badge-dot"></span>UPI Fraud Detection</span>
         <span class="sec-badge sb-agentic" onclick="openModal('newsly')"><span class="badge-dot"></span>AI News Digest Agent</span>
         <span class="sec-badge sb-genai" onclick="openModal('loan')"><span class="badge-dot"></span>ML Risk &amp; AI Chatbot</span>
         <span class="sec-badge sb-yolo" onclick="openModal('road')"><span class="badge-dot"></span>Computer Vision</span>
         <span class="sec-badge sb-spark" onclick="openModal('ecommerce')"><span class="badge-dot"></span>E-Commerce</span>
+        <span class="sec-badge sb-yolo" onclick="openModal('gps')"><span class="badge-dot"></span>GPS IoT Wristband</span>
       </div>
       <div class="proj-grid">
 
@@ -249,6 +251,29 @@
               data-tip="Opens GitHub">↗ GitHub</button>
             <button class="pbt"
               onclick="event.stopPropagation();window.location.href='projects/multimodal-rag-engine.html'"
+              data-tip="Case Study">📄 Case Study</button>
+          </div>
+        </div>
+
+        <!-- UPI Fraud Detection System -->
+        <div class="pc" onclick="openModal('upifraud')">
+          <div class="pc-head">
+            <div class="pc-icon-row">
+              <div class="pc-icon" style="background:rgba(239,68,68,0.15);border:1px solid rgba(239,68,68,0.3)">🛡️
+              </div>
+              <span class="pc-tag">PySpark · FastAPI · MLflow</span>
+            </div>
+            <div class="pc-title">UPI Fraud Detection System</div>
+            <div class="pc-desc">Near-real-time transaction fraud monitoring platform combining streaming feature vectors, explainable risk scoring, and automated MLflow experiment tracking for UPI payments.</div>
+          </div>
+          <div class="tags-row"><span class="tag">PySpark</span><span class="tag">FastAPI</span><span class="tag">MLflow</span><span class="tag">Scikit-learn</span><span class="tag">Python</span></div>
+          <div class="pc-foot">
+            <button class="pbt primary">▶ Details</button>
+            <button class="pbt"
+              onclick="event.stopPropagation();window.open('https://github.com/patil-08/upi-fraud-detection')"
+              data-tip="Opens GitHub">↗ GitHub</button>
+            <button class="pbt"
+              onclick="event.stopPropagation();window.location.href='projects/upi-fraud-detection.html'"
               data-tip="Case Study">📄 Case Study</button>
           </div>
         </div>
@@ -340,6 +365,32 @@
             <button class="pbt"
               onclick="event.stopPropagation();window.open('https://github.com/patil-08/Style-Up-E-commerce-Website.git')"
               data-tip="Opens GitHub">↗ GitHub</button>
+            <button class="pbt"
+              onclick="event.stopPropagation();window.location.href='projects/style-up-ecommerce.html'"
+              data-tip="Case Study">📄 Case Study</button>
+          </div>
+        </div>
+
+        <!-- GPS Safety Wristband -->
+        <div class="pc" onclick="openModal('gps')">
+          <div class="pc-head">
+            <div class="pc-icon-row">
+              <div class="pc-icon" style="background:rgba(236,72,153,0.15);border:1px solid rgba(236,72,153,0.3)">⌚
+              </div>
+              <span class="pc-tag">Arduino · Firebase · Mobile</span>
+            </div>
+            <div class="pc-title">GPS Safety Wristband</div>
+            <div class="pc-desc">Wearable emergency response system broadcasting real-time location telemetry and triggering panic alerts via BLE gateway and Firebase cloud backend.</div>
+          </div>
+          <div class="tags-row"><span class="tag">Arduino</span><span class="tag">Firebase</span><span class="tag">BLE</span><span class="tag">Dart</span></div>
+          <div class="pc-foot">
+            <button class="pbt primary">▶ Details</button>
+            <button class="pbt"
+              onclick="event.stopPropagation();window.open('https://github.com/patil-08')"
+              data-tip="Opens GitHub">↗ GitHub</button>
+            <button class="pbt"
+              onclick="event.stopPropagation();window.location.href='projects/gps-safety-wristband.html'"
+              data-tip="Case Study">📄 Case Study</button>
           </div>
         </div>
 
