@@ -446,17 +446,18 @@ canvas#net {
 .bul {
   font-size: 13.5px;
   color: var(--t1);
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
+  position: relative;
+  padding-left: 1.25rem;
   margin-bottom: 0.5rem;
   line-height: 1.6;
 }
 .bul::before {
   content: '▸';
+  position: absolute;
+  left: 0;
+  top: 0;
   color: var(--blue);
   opacity: 0.8;
-  flex-shrink: 0;
 }
 .hl {
   color: var(--t0);
