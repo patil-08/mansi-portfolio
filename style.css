@@ -31,6 +31,20 @@
   padding: 0;
 }
 
+img, svg, canvas, video {
+  max-width: 100%;
+}
+
+table {
+  max-width: 100%;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 70px;
@@ -797,18 +811,17 @@ canvas#net {
   background: rgba(4, 6, 12, 0.9);
   backdrop-filter: blur(10px);
   z-index: 200;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
   opacity: 0;
-  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
+  transition: opacity 0.25s ease;
 }
 .overlay.open {
+  display: flex;
   opacity: 1;
-  visibility: visible;
   pointer-events: all;
 }
 .modal {
@@ -1569,17 +1582,16 @@ canvas#net {
   background: rgba(4, 6, 12, 0.85);
   backdrop-filter: blur(8px);
   z-index: 300;
-  display: flex;
+  display: none;
   justify-content: center;
   padding-top: 14vh;
   opacity: 0;
-  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 .cp-overlay.open {
+  display: flex;
   opacity: 1;
-  visibility: visible;
   pointer-events: all;
 }
 .cp-box {
@@ -2204,10 +2216,20 @@ footer a:hover {
   padding: 6px 14px;
   font-size: 12px;
 }
-.btn-ghost {
-  border: 1px solid var(--bd2);
-  background: var(--bg2);
-  color: var(--t0);
+.btn-primary {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--blue2);
+  border-color: var(--blue2);
+  color: #fff;
+}
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
 }
 .detail-list {
   padding-left: 1.2rem;
