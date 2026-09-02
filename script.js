@@ -247,33 +247,85 @@ function showToast(msg, type = 'success', dur = 3500) {
   draw();
 })();
 
-// --- HEATMAP GENERATOR ---
-(function buildHeatmap() {
-  const hm = document.getElementById('heatmap');
-  if (!hm) return;
-  
-  // Generate realistic clustered contributions (sine wave + noise)
-  // This simulates active developer sprint cycles and quiet weeks
-  for (let i = 0; i < 210; i++) {
-    const c = document.createElement('div');
-    c.className = 'hc';
-    
-    // Wave patterns to group green blocks (sprints) and gray blocks (rest days)
-    const wave = Math.sin(i * 0.15) * Math.cos(i * 0.05) * 1.5;
-    const noise = (Math.random() - 0.5) * 0.8;
-    const activity = wave + noise;
-    
-    if (activity > 0.8) {
-      c.classList.add('l4'); // High contributions
-    } else if (activity > 0.3) {
-      c.classList.add('l3'); // Medium-high contributions
-    } else if (activity > -0.1) {
-      c.classList.add('l2'); // Medium-low contributions
-    } else if (activity > -0.5) {
-      c.classList.add('l1'); // Low contributions
-    } // Else remains gray
-    
-    hm.appendChild(c);
+// --- REAL GITHUB CONTRIBUTION HEATMAP ---
+(async function initGitHubHeatmap() {
+  const container = document.getElementById('heatmap');
+  const countEl = document.getElementById('ghTotalCount');
+  if (!container) return;
+
+  const username = 'patil-08';
+
+  try {
+    let res = await fetch(`/api/github-contributions?username=${encodeURIComponent(username)}`);
+    if (!res.ok) {
+      // Direct API fallback if local serverless endpoint is not available
+      res = await fetch(`https://github-contributions-api.jogruber.de/v4/${encodeURIComponent(username)}?y=last`);
+    }
+    if (!res.ok) throw new Error(`Status ${res.status}`);
+
+    const data = await res.json();
+    const days = data.contributions || [];
+    if (!days.length) throw new Error('No contribution data found');
+
+    const total = data.total?.lastYear ?? days.reduce((acc, d) => acc + (d.count || 0), 0);
+    if (countEl) {
+      countEl.innerHTML = `<b style="color:var(--t0)">${total}</b> contributions in the last year`;
+    }
+
+    // Group days into 7-day week columns
+    const weeks = [];
+    for (let i = 0; i < days.length; i += 7) {
+      weeks.push(days.slice(i, i + 7));
+    }
+
+    // Month headers
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const monthsRow = document.createElement('div');
+    monthsRow.className = 'hm-months';
+
+    let lastMonth = -1;
+    const monthPositions = [];
+
+    weeks.forEach((week, wIdx) => {
+      const firstDay = week[0];
+      if (firstDay && firstDay.date) {
+        const m = parseInt(firstDay.date.split('-')[1], 10) - 1;
+        if (m !== lastMonth) {
+          lastMonth = m;
+          monthPositions.push({ name: monthNames[m], col: wIdx });
+        }
+      }
+    });
+
+    monthPositions.forEach(mp => {
+      const mSpan = document.createElement('span');
+      mSpan.textContent = mp.name;
+      mSpan.style.position = 'absolute';
+      mSpan.style.left = (mp.col * 13) + 'px';
+      monthsRow.appendChild(mSpan);
+    });
+
+    const weeksWrap = document.createElement('div');
+    weeksWrap.className = 'hm-weeks';
+
+    weeks.forEach(week => {
+      const wCol = document.createElement('div');
+      wCol.className = 'hm-week';
+      week.forEach(day => {
+        const cell = document.createElement('div');
+        cell.className = `hc lvl-${Math.min(4, Math.max(0, day.level || 0))}`;
+        cell.setAttribute('title', `${day.date}: ${day.count} contribution${day.count === 1 ? '' : 's'}`);
+        wCol.appendChild(cell);
+      });
+      weeksWrap.appendChild(wCol);
+    });
+
+    container.innerHTML = '';
+    container.appendChild(monthsRow);
+    container.appendChild(weeksWrap);
+  } catch (err) {
+    if (countEl) countEl.textContent = 'Activity temporarily unavailable';
+    container.innerHTML = `<div style="font-family:var(--mono);font-size:11px;color:var(--t3);padding:0.5rem 0">// Unable to load live GitHub activity (@${username})</div>`;
   }
 })();
 

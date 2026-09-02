@@ -1398,16 +1398,60 @@ canvas#net {
   flex-wrap: wrap;
   margin: 0.8rem 0;
 }
-.hc {
-  width: 12px;
-  height: 12px;
-  border-radius: 2px;
-  background: var(--bg3);
+/* GITHUB CONTRIBUTION HEATMAP */
+.gh-heatmap-wrap {
+  background: var(--bg1);
+  border: 1px solid var(--bd);
+  border-radius: 14px;
+  padding: 1.25rem 1.4rem;
 }
-.hc.l1 { background: #1b274c; }
-.hc.l2 { background: #254080; }
-.hc.l3 { background: #2d5dbd; }
-.hc.l4 { background: #3b82f6; }
+.hm-scroll-box {
+  overflow-x: auto;
+  padding-bottom: 0.35rem;
+  -webkit-overflow-scrolling: touch;
+}
+.hm-grid {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: fit-content;
+}
+.hm-months {
+  display: flex;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--t3);
+  height: 14px;
+  position: relative;
+  margin-bottom: 2px;
+}
+.hm-weeks {
+  display: flex;
+  gap: 3px;
+}
+.hm-week {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.hc {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: #161b33;
+  transition: transform 0.15s ease, outline 0.15s ease;
+  cursor: pointer;
+}
+.hc:hover {
+  transform: scale(1.25);
+  outline: 1px solid var(--t0);
+  z-index: 2;
+}
+.hc.lvl-0 { background: #161b33; }
+.hc.lvl-1 { background: #0e4429; }
+.hc.lvl-2 { background: #006d32; }
+.hc.lvl-3 { background: #26a641; }
+.hc.lvl-4 { background: #39d353; }
 
 .coursework {
   margin-top: 1rem;
