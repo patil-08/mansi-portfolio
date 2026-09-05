@@ -222,4 +222,17 @@ certs_text = "Business Intelligence with Advanced Excel and Power BI (2024) &nbs
 story.append(Paragraph(certs_text, body_style))
 
 doc.build(story)
-print("Successfully generated exact updated Mansi_Patil_Resume.pdf!")
+
+# Also generate fresh copy with cache-immune name Mansi_Patil_Resume_2026.pdf
+pdf_path_2026 = os.path.join(os.path.dirname(__file__), "Mansi_Patil_Resume_2026.pdf")
+doc2 = SimpleDocTemplate(
+    pdf_path_2026,
+    pagesize=letter,
+    rightMargin=26,
+    leftMargin=26,
+    topMargin=20,
+    bottomMargin=20
+)
+doc2.build(story)
+
+print("Successfully generated exact updated Mansi_Patil_Resume.pdf and Mansi_Patil_Resume_2026.pdf!")
