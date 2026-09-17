@@ -119,9 +119,9 @@ def generate_pdf():
     skills_data = [
         ("<b>BI, Analytics & Data:</b>", "Power BI, SQL, Python, PySpark, Pandas, NumPy, Feature Engineering, Data Cleansing & Validation, Exploratory Data Analysis, Matplotlib/Seaborn"),
         ("<b>Machine Learning:</b>", "Scikit-learn, XGBoost, PyTorch, Regression, Classification, Clustering, Forecasting, Model Evaluation & Cross-Validation, OpenCV, YOLO"),
-        ("<b>Generative AI / LLM:</b>", "LLM Integration, Prompt Engineering, RAG, Multimodal RAG, Embeddings, Vector Databases (Qdrant), Cross-Modal Retrieval, LangChain, LangGraph, OpenAI GPT, Claude, Gemini, Groq API, Hugging Face"),
+        ("<b>Generative AI / LLM:</b>", "LLM Integration, Prompt Engineering, RAG, Multimodal RAG, Embeddings, Vector Databases (Qdrant), Cross-Modal Retrieval, LangChain, LangGraph, OpenAI GPT, Claude, Gemini, Groq API, Hugging Face, Natural Language Processing (NLP)"),
         ("<b>Backend, APIs & Databases:</b>", "FastAPI, Django, REST APIs, MySQL, PostgreSQL, SQLite"),
-        ("<b>Tools & Workflow:</b>", "Docker, Git/GitHub, GitHub Actions, MLflow (experiment tracking), Jupyter, Streamlit, Postman")
+        ("<b>Tools & Workflow:</b>", "Docker, Git/GitHub, GitHub Actions, MLflow (experiment tracking), Jupyter, Streamlit, Postman, AWS")
     ]
 
     for label, val in skills_data:
@@ -135,7 +135,7 @@ def generate_pdf():
     add_section_header("EXPERIENCE")
 
     exp_left = Paragraph("<b>Data Science Intern</b> | <i>Amdox Technologies</i> (<a href='https://github.com/patil-08/NeuralRetail' color='#1D4ED8'><u>GitHub</u></a>)", subhead_style)
-    exp_right = Paragraph("<para align='right'>Apr 2026 – Jun 2026</para>", subhead_style)
+    exp_right = Paragraph("<para align='right'>Jan 2026 – Jun 2026</para>", subhead_style)
     t = Table([[exp_left, exp_right]], colWidths=[420, 140])
     t.setStyle(TableStyle([
         ('VALIGN', (0,0), (-1,-1), 'TOP'),

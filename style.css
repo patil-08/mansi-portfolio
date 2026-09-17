@@ -1578,6 +1578,48 @@ canvas#net {
   justify-content: center;
   margin-top: 1.5rem;
 }
+.resume-preview-wrap {
+  margin-top: 2rem;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--bd);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  background: #ffffff;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: block;
+  text-decoration: none;
+}
+.resume-preview-wrap:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue);
+  box-shadow: 0 25px 60px rgba(37, 99, 235, 0.25);
+}
+.resume-preview-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.resume-preview-overlay {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  background: rgba(15, 23, 42, 0.88);
+  color: #fff;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
 
 /* FLOATING UTILITIES */
 .scroll-bar {
