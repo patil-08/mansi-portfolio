@@ -15,34 +15,35 @@
   </header>
 
   <main class="project-detail-main">
-    <section class="project-detail-hero glass-card">
+    <section class="project-detail-hero glass-card" style="background:#111;color:#fff;padding:1rem;text-align:center;">
       <div>
         <p class="eyebrow">Project Case Study</p>
         <h1>Multimodal RAG Engine — Cross-Modal Document Intelligence</h1>
-        <p class="section-copy">An enterprise-grade document intelligence system performing joint retrieval of dense text and embedded visual figures from complex PDF reports using dual-vector search, Reciprocal Rank Fusion, MS-MARCO Cross-Encoder reranking, and Claude API Vision-LLM generation.</p>
+        <p class="section-copy">An enterprise‑grade document intelligence system performing joint retrieval of dense text and embedded visual figures from complex PDF reports using dual‑vector search, Reciprocal Rank Fusion, MS‑MARCO Cross‑Encoder reranking, and Claude API Vision‑LLM generation.</p>
         <div class="project-detail-meta">
           <span class="status-pill live">Production Ready</span>
-          <span>Python • FastAPI • Qdrant • CLIP • BLIP-2 • Claude API • Docker</span>
+          <span class="tech-tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Qdrant</span><span class="tag">CLIP</span><span class="tag">BLIP-2</span><span class="tag">Claude API</span><span class="tag">Docker</span></span>
         </div>
-        <div class="card-actions">
-          <a class="btn btn-small btn-ghost" href="https://github.com/patil-08" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+        <div class="cta-row" style="margin-top:1rem;display:flex;gap:0.5rem;justify-content:center;">
+          <a href="projects/multimodal-rag-engine.html" class="btn" style="background:#0d6efd;color:#fff;padding:0.5rem 1rem;border:none;border-radius:0.25rem;">Case Study</a>
+          <a href="https://github.com/patil-08" target="_blank" class="btn" style="background:transparent;color:#0d6efd;padding:0.5rem 1rem;border:1px solid #0d6efd;border-radius:0.25rem;">GitHub</a>
         </div>
       </div>
     </section>
 
     <section class="detail-section glass-card">
-      <h2>Overview</h2>
-      <p>Traditional RAG systems fail when enterprise documents contain critical information embedded in charts, diagrams, tables, and multi-page graphics. The Multimodal RAG Engine extracts both text and high-DPI page images from complex PDFs using PyMuPDF, indexes them into a dual-vector Qdrant store combining text and visual embeddings, and synthesizes answers using Claude API Vision-LLM with grounded page citations.</p>
-    </section>
-
-    <section class="detail-section glass-card">
-      <h2>Objectives</h2>
-      <ul class="detail-list">
-         <li>Extract high-resolution visual charts, tables, and sentence-aware text chunks (~300 chars) to eliminate mid-sentence breaks.</li>
-         <li>Construct a dual-vector index fusing SentenceTransformer (384-d text) and OpenCLIP (512-d image) embeddings via Reciprocal Rank Fusion.</li>
-         <li>Cut retrieved noise by applying a dynamic relevance cutoff (≥ 0.40) and MS-MARCO Cross-Encoder reranking in Qdrant to 3 high-precision context chunks per query.</li>
-         <li>Prevent LLM hallucinations using XML-based prompt injection defenses and strict inline page citation logic in Claude API.</li>
-      </ul>
+      <div class="feature-block">
+        <h3>Extracts Text &amp; Visuals</h3>
+        <p>Extracts both text and high‑DPI page images from PDFs using PyMuPDF, with sentence‑aware chunking (~300 chars).</p>
+      </div>
+      <div class="feature-block">
+        <h3>Dual‑Vector Retrieval</h3>
+        <p>Creates a dual‑vector index (SentenceTransformer 384‑d text + OpenCLIP 512‑d image) fused via Reciprocal Rank Fusion and refined with MS‑MARCO Cross‑Encoder reranking.</p>
+      </div>
+      <div class="feature-block">
+        <h3>Grounded LLM Answers</h3>
+        <p>Generates answers with Claude Vision‑LLM, enforcing XML‑based prompt defenses and providing precise page citations.</p>
+      </div>
     </section>
 
     <section class="detail-section glass-card">

@@ -703,36 +703,25 @@
   <!-- Multimodal RAG Engine Modal -->
   <div class="overlay" id="m-rag">
     <div class="modal">
-      <div class="mh">
-        <div style="display:flex;align-items:center;gap:0.75rem">
-          <span style="font-size:20px">⚡</span>
-          <div>
-            <div style="font-size:1rem;font-weight:700;color:var(--t0)">Multimodal RAG Engine</div>
-            <div style="font-size:11px;color:var(--t2);font-family:var(--mono)">Cross-Modal Document Intelligence</div>
-          </div>
-        </div>
+      <div class="modal-hero" style="background:#111;padding:1rem;text-align:center;">
+        <img src="architecture-diagram-placeholder.png" alt="Architecture Diagram" style="max-width:100%;height:auto;" />
+        <h2 style="font-size:2rem;font-weight:bold;color:#fff;margin-top:0.5rem;">Grounded answers from PDFs, text and charts alike.</h2>
         <button class="mcl" onclick="closeModal('rag')">✕ Close</button>
       </div>
-      <div class="mb">
-        <div class="m2" style="margin-bottom:1.25rem">
-          <div>
-            <div class="mlbl">What it does</div>
-            <div class="bul">Extracts text, tables &amp; high-DPI page images from PDFs using <span class="hl">PyMuPDF</span> with sentence-aware chunking (~300 chars).</div>
-            <div class="bul">Dual-vector retrieval combining <span class="hl">SentenceTransformer (384-d)</span> text &amp; <span class="hl">OpenCLIP (512-d)</span> image embeddings via <span class="hl">Reciprocal Rank Fusion</span>.</div>
-            <div class="bul">Applies dynamic cutoff (≥ 0.40) &amp; <span class="hl">MS-MARCO Cross-Encoder reranking</span> in <span class="hl">Qdrant</span>, cutting retrieved context to 3 high-precision chunks.</div>
-            <div class="bul">Engineered a grounded <span class="hl">Claude API Vision-LLM generator</span> with XML prompt-injection defenses and refusal logic.</div>
-          </div>
-          <div>
-            <div class="mlbl">Technologies</div>
-            <div style="display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:1rem">
-              <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Qdrant</span><span class="tag">CLIP</span><span class="tag">BLIP-2</span><span class="tag">Claude API</span><span class="tag">Docker</span>
-            </div>
-          </div>
+      <div class="modal-content" style="padding:1rem;">
+        <p>Our system extracts both text and visual information from complex PDFs and returns precise, citation‑backed answers.</p>
+        <div class="features" style="display:flex;flex-direction:column;gap:0.75rem;margin-top:0.75rem;">
+          <div><strong>Extracts Text &amp; Visuals</strong> – Pulls text, tables and high‑DPI page images from PDFs.</div>
+          <div><strong>Dual‑Vector Retrieval</strong> – Combines text and image embeddings via Reciprocal Rank Fusion for cross‑modal search.</div>
+          <div><strong>Grounded LLM Answers</strong> – Generates answers using Claude Vision‑LLM with citation logic.</div>
         </div>
-        <a href="https://github.com/patil-08" target="_blank" class="btn btn-p"
-          style="font-size:12px">↗ Open on GitHub</a>
-        <a href="projects/multimodal-rag-engine.html" class="btn"
-          style="font-size:12px;margin-left:0.5rem">📄 Case Study</a>
+        <div class="tech-tags" style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:0.35rem;">
+          <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Qdrant</span><span class="tag">CLIP</span><span class="tag">BLIP-2</span><span class="tag">Claude API</span><span class="tag">Docker</span>
+        </div>
+        <div class="cta-row" style="margin-top:1rem;display:flex;gap:0.5rem;">
+          <a href="projects/multimodal-rag-engine.html" class="btn" style="background:#0d6efd;color:#fff;padding:0.5rem 1rem;border:none;border-radius:0.25rem;">Case Study</a>
+          <a href="https://github.com/patil-08" target="_blank" class="btn" style="background:transparent;color:#0d6efd;padding:0.5rem 1rem;border:1px solid #0d6efd;border-radius:0.25rem;">GitHub</a>
+        </div>
       </div>
     </div>
   </div>
