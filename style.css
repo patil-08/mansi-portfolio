@@ -2323,3 +2323,75 @@ footer a:hover {
     padding: 1.25rem;
   }
 }
+
+
+/* -------------------------------------------------
+   Project Card – enhanced premium styling (Task 1 – refined)
+   ------------------------------------------------- */
+.pc {
+  /* Deep navy gradient as requested */
+  background: linear-gradient(
+    145deg,
+    #0d1224 0%,
+    #0a0f1d 55%,
+    #0b1324 100%
+  );
+  /* Subtle blue‑gray border */
+  border: 1px solid #1e2a38;
+  border-radius: 12px;
+  /* Soft outer shadow for depth */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  /* Inner highlight (inset) for premium panel feel */
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.04),
+              0 4px 12px rgba(0, 0, 0, 0.45);
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease,
+              border-color 0.3s ease,
+              background 0.3s ease;
+  position: relative; /* needed for ::before sheen */
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .pc:hover,
+  .pc:focus-within {
+    transform: translateY(-4px);
+    /* Slightly brighter border using accent color */
+    border-color: var(--purple);
+    /* Slightly lighter gradient on hover */
+    background: linear-gradient(
+      145deg,
+      #111832 0%,
+      #0c1220 55%,
+      #0c1630 100%
+    );
+    /* Stronger outer shadow on hover */
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.04),
+                0 8px 20px rgba(0, 0, 0, 0.55);
+  }
+  .pc::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: linear-gradient(
+      120deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.07) 50%,
+      rgba(255,255,255,0) 100%
+    );
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .pc:hover::before,
+  .pc:focus-within::before {
+    opacity: 0.35;
+  }
+}
+
+/* Ensure the project grid keeps its three‑column layout on desktop */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
