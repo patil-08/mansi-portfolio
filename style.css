@@ -540,6 +540,31 @@ canvas#net {
   color: var(--t1);
   line-height: 1.55;
 }
+.pc-focus {
+  padding: 0 1.25rem;
+  margin-top: -0.25rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.focus-label {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #8b9bb4;
+  line-height: 1.2;
+}
+.focus-value {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--t0);
+  line-height: 1.4;
+  letter-spacing: 0.1px;
+}
 .tags-row {
   display: flex;
   flex-wrap: wrap;
@@ -2008,6 +2033,9 @@ footer a:hover {
   }
   .pc-head {
     padding: 1rem;
+  }
+  .pc-focus {
+    padding: 0 1rem;
   }
   .tags-row {
     padding: 0.4rem 1rem 0.6rem;
