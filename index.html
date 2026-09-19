@@ -227,18 +227,18 @@
       <div class="sec-tag">PROJECTS</div>
       <div class="sec-title">Data, ML &amp; Generative AI Projects</div>
       <div class="sec-sub">// Click a card to view architectural details &amp; case studies</div>
-      <div class="sec-badges">
-        <span class="sec-badge sb-genai" onclick="openModal('rag')"><span class="badge-dot"></span>Multimodal RAG</span>
-        <span class="sec-badge sb-spark" onclick="openModal('upifraud')"><span class="badge-dot"></span>UPI Fraud Detection</span>
-        <span class="sec-badge sb-agentic" onclick="openModal('newsly')"><span class="badge-dot"></span>AI News Digest Agent</span>
-        <span class="sec-badge sb-genai" onclick="openModal('loan')"><span class="badge-dot"></span>ML Risk &amp; AI Chatbot</span>
-        <span class="sec-badge sb-yolo" onclick="openModal('road')"><span class="badge-dot"></span>Computer Vision</span>
-        <span class="sec-badge sb-spark" onclick="openModal('ecommerce')"><span class="badge-dot"></span>E-Commerce</span>
-        <span class="sec-badge sb-yolo" onclick="openModal('gps')"><span class="badge-dot"></span>GPS IoT Wristband</span>
+      <div class="sec-badges" role="group" aria-label="Filter projects by category">
+        <button type="button" class="sec-badge sb-all active" aria-pressed="true" data-filter="all" onclick="filterProjects('all')"><span class="badge-dot"></span>ALL</button>
+        <button type="button" class="sec-badge sb-aiml" aria-pressed="false" data-filter="ai-ml" onclick="filterProjects('ai-ml')"><span class="badge-dot"></span>AI / ML</button>
+        <button type="button" class="sec-badge sb-genai" aria-pressed="false" data-filter="generative-ai" onclick="filterProjects('generative-ai')"><span class="badge-dot"></span>GENERATIVE AI</button>
+        <button type="button" class="sec-badge sb-data" aria-pressed="false" data-filter="data-analytics" onclick="filterProjects('data-analytics')"><span class="badge-dot"></span>DATA / ANALYTICS</button>
+        <button type="button" class="sec-badge sb-vision" aria-pressed="false" data-filter="computer-vision" onclick="filterProjects('computer-vision')"><span class="badge-dot"></span>COMPUTER VISION</button>
+        <button type="button" class="sec-badge sb-fullstack" aria-pressed="false" data-filter="full-stack" onclick="filterProjects('full-stack')"><span class="badge-dot"></span>FULL STACK</button>
+        <button type="button" class="sec-badge sb-iot" aria-pressed="false" data-filter="iot" onclick="filterProjects('iot')"><span class="badge-dot"></span>IoT</button>
       </div>
       <div class="proj-grid">
   <!-- NeuralRetail Featured Project Card -->
-  <div class="pc pc-featured" onclick="openModal('neuralretail')">
+  <div class="pc pc-featured" data-category="ai-ml data-analytics" onclick="openModal('neuralretail')">
     <div class="pc-header-info">
       <span class="featured-label">FEATURED PROJECT</span>
       <span class="pc-number">01</span>
@@ -270,7 +270,7 @@
   </div>
 
         <!-- Multimodal RAG Engine (Flagship Project) -->
-        <div class="pc" onclick="openModal('rag')">
+        <div class="pc" data-category="generative-ai ai-ml" onclick="openModal('rag')">
   <div class="pc-header-info">
     <span class="pc-number">01</span>
     <span class="pc-category">AI / RAG</span>
@@ -298,7 +298,7 @@
         </div>
 
         <!-- UPI Fraud Detection System -->
-        <div class="pc" onclick="openModal('upifraud')">
+        <div class="pc" data-category="ai-ml data-analytics" onclick="openModal('upifraud')">
   <div class="pc-header-info">
     <span class="pc-number">02</span>
     <span class="pc-category">FRAUD DETECTION</span>
@@ -326,7 +326,7 @@
         </div>
 
         <!-- Newsly – AI-Powered Daily News Digest Agent -->
-        <div class="pc" onclick="openModal('newsly')">
+        <div class="pc" data-category="generative-ai ai-ml" onclick="openModal('newsly')">
           <div class="pc-head">
             <div class="pc-icon-row">
               <div class="pc-icon" style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3)">📰
@@ -351,7 +351,7 @@
         </div>
 
         <!-- Loan Approval Prediction System -->
-        <div class="pc" onclick="openModal('loan')">
+        <div class="pc" data-category="ai-ml generative-ai data-analytics" onclick="openModal('loan')">
           <div class="pc-head">
             <div class="pc-icon-row">
               <div class="pc-icon" style="background:rgba(244,114,182,0.15);border:1px solid rgba(244,114,182,0.3)">📊
@@ -376,7 +376,7 @@
         </div>
 
         <!-- Road Safety Detection -->
-        <div class="pc" onclick="openModal('road')">
+        <div class="pc" data-category="computer-vision ai-ml" onclick="openModal('road')">
           <div class="pc-head">
             <div class="pc-icon-row">
               <div class="pc-icon" style="background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3)">🚗
@@ -398,7 +398,7 @@
         </div>
 
         <!-- E-Commerce Website -->
-        <div class="pc" onclick="openModal('ecommerce')">
+        <div class="pc" data-category="full-stack" onclick="openModal('ecommerce')">
           <div class="pc-head">
             <div class="pc-icon-row">
               <div class="pc-icon" style="background:rgba(139,92,246,0.15);border:1px solid rgba(139,92,246,0.3)">🛒
@@ -423,7 +423,7 @@
         </div>
 
         <!-- GPS Safety Wristband -->
-        <div class="pc" onclick="openModal('gps')">
+        <div class="pc" data-category="iot" onclick="openModal('gps')">
           <div class="pc-head">
             <div class="pc-icon-row">
               <div class="pc-icon" style="background:rgba(236,72,153,0.15);border:1px solid rgba(236,72,153,0.3)">⌚
