@@ -628,6 +628,17 @@ canvas#net {
   overflow: hidden;
   transition: all 0.2s;
   cursor: pointer;
+  background: transparent;
+  outline: none;
+}
+button.sec-badge {
+  font-family: var(--mono);
+  color: inherit;
+  line-height: inherit;
+}
+.sec-badge:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
 }
 .sec-badge::before {
   content: '';
@@ -639,16 +650,71 @@ canvas#net {
 .sec-badge:hover::before {
   opacity: 1;
 }
-.sb-spark { color: #60a5fa; border-color: rgba(96, 165, 250, 0.35); background: rgba(59, 130, 246, 0.08); }
-.sb-yolo { color: #34d399; border-color: rgba(52, 211, 153, 0.35); background: rgba(16, 185, 129, 0.08); }
+.sb-all { color: var(--t1); border-color: var(--bd2); background: rgba(255, 255, 255, 0.04); }
+.sb-aiml, .sb-spark { color: #60a5fa; border-color: rgba(96, 165, 250, 0.35); background: rgba(59, 130, 246, 0.08); }
 .sb-genai { color: #a78bfa; border-color: rgba(167, 139, 250, 0.35); background: rgba(139, 92, 246, 0.08); }
-.sb-agentic { color: #f472b6; border-color: rgba(244, 114, 182, 0.35); background: rgba(236, 72, 153, 0.08); }
+.sb-data { color: #38bdf8; border-color: rgba(56, 189, 248, 0.35); background: rgba(56, 189, 248, 0.08); }
+.sb-vision, .sb-yolo { color: #34d399; border-color: rgba(52, 211, 153, 0.35); background: rgba(16, 185, 129, 0.08); }
+.sb-fullstack { color: #fbbf24; border-color: rgba(251, 191, 36, 0.35); background: rgba(245, 158, 11, 0.08); }
+.sb-iot, .sb-agentic { color: #f472b6; border-color: rgba(244, 114, 182, 0.35); background: rgba(236, 72, 153, 0.08); }
+
+.sec-badge.active {
+  box-shadow: 0 0 0 1px currentColor;
+}
+.sec-badge.active.sb-all {
+  color: #ffffff;
+  border-color: var(--blue);
+  background: rgba(59, 130, 246, 0.22);
+  box-shadow: 0 0 0 1px var(--blue);
+}
+.sec-badge.active.sb-aiml, .sec-badge.active.sb-spark {
+  background: rgba(59, 130, 246, 0.22);
+  border-color: #60a5fa;
+  color: #93c5fd;
+}
+.sec-badge.active.sb-genai {
+  background: rgba(139, 92, 246, 0.22);
+  border-color: #a78bfa;
+  color: #c4b5fd;
+}
+.sec-badge.active.sb-data {
+  background: rgba(56, 189, 248, 0.22);
+  border-color: #38bdf8;
+  color: #7dd3fc;
+}
+.sec-badge.active.sb-vision, .sec-badge.active.sb-yolo {
+  background: rgba(16, 185, 129, 0.22);
+  border-color: #34d399;
+  color: #6ee7b7;
+}
+.sec-badge.active.sb-fullstack {
+  background: rgba(245, 158, 11, 0.22);
+  border-color: #fbbf24;
+  color: #fde68a;
+}
+.sec-badge.active.sb-iot, .sec-badge.active.sb-agentic {
+  background: rgba(236, 72, 153, 0.22);
+  border-color: #f472b6;
+  color: #f9a8d4;
+}
 .badge-dot {
   width: 5px;
   height: 5px;
   border-radius: 50%;
   background: currentColor;
   animation: pulse-dot 2s infinite;
+}
+.pc.is-hidden {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sec-badge,
+  .sec-badge::before,
+  .badge-dot {
+    transition: none !important;
+    animation: none !important;
+  }
 }
 
 /* AI LABS */

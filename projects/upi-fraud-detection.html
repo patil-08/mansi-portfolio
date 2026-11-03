@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UPI Fraud Detection System | Project Case Study</title>
+  <title>UPI-Style Fraud Detection System | Project Case Study</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
@@ -18,11 +18,11 @@
     <section class="project-detail-hero glass-card">
       <div>
         <p class="eyebrow">Project Case Study</p>
-        <h1>UPI Fraud Detection System</h1>
-        <p class="section-copy">A production-minded fraud monitoring platform that combines streaming data, explainable risk scoring, and operations-focused alerting for UPI transaction flows.</p>
+        <h1>UPI-Style Fraud Detection System</h1>
+        <p class="section-copy">Transaction fraud detection with an XGBoost model, a FastAPI scoring API with Low/Medium/High risk tiers, and a live Streamlit dashboard that simulates UPI payments.</p>
         <div class="project-detail-meta">
           <span class="status-pill live">Live</span>
-          <span>Python • PySpark • FastAPI • MLflow</span>
+          <span>Python • PySpark • XGBoost • FastAPI • Streamlit • Scikit-learn</span>
         </div>
         <div class="card-actions">
           <a class="btn btn-small btn-ghost" href="https://github.com/patil-08/upi-fraud-detection" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -52,7 +52,7 @@
 
     <section class="detail-section glass-card">
       <h2>Dataset</h2>
-      <p>Historical transaction logs and labeled fraud outcomes were used to model behavioral risk. The dataset included velocity features, merchant attributes, location signals, and transaction metadata.</p>
+      <p>Trained and evaluated on the public European credit card fraud dataset (284,807 transactions, about 0.17% fraud) alongside a simulated UPI payment front end to assess real-time transaction risk under extreme class imbalance.</p>
     </section>
 
     <section class="detail-section glass-card">
@@ -77,7 +77,7 @@
 
     <section class="detail-section glass-card">
       <h2>Training</h2>
-      <p>Training used stratified splits and cross-validated tuning to reduce variance. Model experiments were tracked in MLflow to support reproducibility and compare threshold settings.</p>
+      <p>Training used stratified splits and cross-validated tuning to reduce variance and optimize classification thresholds for imbalanced fraud data.</p>
     </section>
 
     <section class="detail-section glass-card">

@@ -356,6 +356,27 @@ document.querySelectorAll('.overlay').forEach(o => {
   });
 });
 
+// --- PROJECT FILTERING ---
+function filterProjects(category) {
+  const badges = document.querySelectorAll('.sec-badges .sec-badge');
+  badges.forEach(badge => {
+    const isMatch = badge.getAttribute('data-filter') === category;
+    badge.classList.toggle('active', isMatch);
+    badge.setAttribute('aria-pressed', isMatch ? 'true' : 'false');
+  });
+
+  const cards = document.querySelectorAll('.proj-grid .pc');
+  cards.forEach(card => {
+    const cardCat = card.getAttribute('data-category') || '';
+    const categories = cardCat.split(/\s+/);
+    if (category === 'all' || categories.includes(category)) {
+      card.classList.remove('is-hidden');
+    } else {
+      card.classList.add('is-hidden');
+    }
+  });
+}
+
 // --- INTERACTIVE AI CHAT ENGINE ---
 const chatResponses = {
   rag: "The Multimodal RAG Engine is a flagship Cross-Modal Document Intelligence system. Built with Python, FastAPI, PyMuPDF, Qdrant, CLIP, BLIP-2, Claude API, and Docker. It extracts text and visual charts from complex PDFs, indexes dual-vector embeddings (384-d text + 512-d image) in Qdrant with Reciprocal Rank Fusion & MS-MARCO Cross-Encoder reranking, and generates grounded answers with inline citations via Claude Vision-LLM.",

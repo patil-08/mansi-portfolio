@@ -105,23 +105,25 @@ def generate_pdf():
 
     # 2. PROFESSIONAL SUMMARY
     add_section_header("PROFESSIONAL SUMMARY")
-    summary_p = ("Computer Science graduate (B.Tech, CGPA 8.74/10) with hands-on experience across data analytics, machine learning, and Generative AI, built through "
-                 "an industry internship and independent end-to-end projects. Comfortable executing well-defined analytical tasks — data cleaning, feature engineering, "
-                 "exploratory analysis, and structured model validation — using SQL, Python, PySpark, and Power BI/Streamlit. Applied classification, clustering, and "
-                 "forecasting techniques (0.84+ ROC-AUC) and tracked experiments in MLflow for reproducibility. Also gained exposure to unstructured data and LLM-based "
-                 "techniques through applied RAG pipelines, cutting retrieved context by over 60% via relevance filtering and reranking. Seeking an entry-level "
-                 "Data Scientist role to support senior team members in building reliable models, dashboards, and AI-enabled solutions within structured, guided workflows.")
+    summary_p = ("Computer Science graduate (B.Tech, CGPA 8.74/10) with hands-on experience in data science, machine learning, and Generative AI "
+                 "through an industry internship and end-to-end projects in fraud detection, loan risk, retail analytics, and demand forecasting. Skilled in "
+                 "SQL, Python, and PySpark for data preparation, predictive modeling, forecasting, and dashboards, with MLflow experiment tracking, "
+                 "FastAPI/Docker deployment, and exposure to NLP and RAG on unstructured data. Seeking a Data Scientist role to build reliable, "
+                 "data-driven solutions.")
     story.append(Paragraph(summary_p, body_style))
     story.append(Spacer(1, 2))
 
-    # 3. TECHNICAL SKILLS
-    add_section_header("TECHNICAL SKILLS")
+    # 3. CORE SKILLS
+    add_section_header("CORE SKILLS")
     skills_data = [
-        ("<b>BI, Analytics & Data:</b>", "Power BI, SQL, Python, PySpark, Pandas, NumPy, Feature Engineering, Data Cleansing & Validation, Exploratory Data Analysis, Matplotlib/Seaborn"),
-        ("<b>Machine Learning:</b>", "Scikit-learn, XGBoost, PyTorch, Regression, Classification, Clustering, Forecasting, Model Evaluation & Cross-Validation, OpenCV, YOLO"),
-        ("<b>Generative AI / LLM:</b>", "LLM Integration, Prompt Engineering, RAG, Multimodal RAG, Embeddings, Vector Databases (Qdrant), Cross-Modal Retrieval, LangChain, LangGraph, OpenAI GPT, Claude, Gemini, Groq API, Hugging Face, Natural Language Processing (NLP)"),
-        ("<b>Backend, APIs & Databases:</b>", "FastAPI, Django, REST APIs, MySQL, PostgreSQL, SQLite"),
-        ("<b>Tools & Workflow:</b>", "Docker, Git/GitHub, GitHub Actions, MLflow (experiment tracking), Jupyter, Streamlit, Postman, AWS")
+        ("<b>Programming & Query Languages:</b>", "Python, SQL, PySpark"),
+        ("<b>Machine Learning:</b>", "Scikit-learn, XGBoost, Statistical & Predictive Modeling, Regression, Classification, Clustering, Time-Series Forecasting, Feature Engineering, Model Evaluation, Validation & Cross-Validation"),
+        ("<b>Deep Learning & NLP:</b>", "PyTorch, Natural Language Processing (NLP), OpenCV, YOLO"),
+        ("<b>Generative AI / LLM:</b>", "LLM Integration, Prompt Engineering, RAG, Multimodal RAG, Embeddings, Vector Databases (Qdrant), Cross-Modal Retrieval, LangChain, LangGraph, OpenAI GPT, Claude, Gemini, Groq API, Hugging Face"),
+        ("<b>MLOps & Deployment:</b>", "MLflow, Evidently AI (Model Monitoring), Docker, CI/CD (GitHub Actions), Git/GitHub, FastAPI, REST APIs"),
+        ("<b>Big Data & Data Engineering:</b>", "PySpark, ETL Pipelines, Data Cleansing & Validation, Data Transformation, Pandas, NumPy"),
+        ("<b>Analytics & Visualization:</b>", "Power BI, Streamlit, Plotly, Matplotlib/Seaborn, Exploratory Data Analysis, Advanced Excel"),
+        ("<b>Backend, Databases & Cloud:</b>", "Django, MySQL, PostgreSQL, SQLite, Supabase, AWS, Postman, Jupyter")
     ]
 
     for label, val in skills_data:
@@ -148,10 +150,10 @@ def generate_pdf():
     story.append(Spacer(1, 1))
 
     exp_bullets = [
-        "Supported senior team members on <b>NeuralRetail</b>, an enterprise retail analytics system, by developing 3 ML models under guided workflows — <b>XGBoost churn classification (0.84+ ROC-AUC)</b>, ARIMA 30-day demand forecasting, and K-Means customer segmentation.",
+        "Developed 3 ML models for <b>NeuralRetail</b>, an enterprise retail analytics system, in collaboration with senior team members — <b>XGBoost churn classification (0.84 ROC-AUC)</b>, ARIMA 30-day demand forecasting (12.3% MAPE), and K-Means customer segmentation.",
         "Built and tested secure <b>RESTful FastAPI endpoints</b> with JWT authentication and SQLite persistence, powering real-time model scoring and automated inventory reorder alerts.",
-        "Performed structured exploratory data analysis and data validation, and built an interactive <b>Streamlit/Plotly dashboard</b> to visualize sales trends and churn simulations.",
-        "Tracked model lifecycle metrics for all 3 models using <b>MLflow</b>, following defined evaluation practices to support reproducible experimentation."
+        "Performed exploratory data analysis, data cleaning, and validation, engineered RFM and lag features, and built an interactive <b>Streamlit/Plotly dashboard</b> to communicate sales trends and churn risk to stakeholders.",
+        "Tracked all 3 models using <b>MLflow</b>, added Evidently AI drift reports for model monitoring, and containerized services with Docker."
     ]
 
     for b in exp_bullets:
@@ -163,16 +165,16 @@ def generate_pdf():
     # 5. PROJECTS
     add_section_header("PROJECTS")
 
-    # Project 1: Multimodal RAG Engine
-    p1_head = "<b>Multimodal RAG Engine — Cross-Modal Document Intelligence System</b> (<a href='https://github.com/patil-08' color='#1D4ED8'><u>GitHub</u></a>) — <i>Python, FastAPI, Qdrant, CLIP, BLIP-2, Claude API, Docker</i>"
+    # Project 1: Real-Time UPI-Style Transaction Fraud Detection System
+    p1_head = "<b>Real-Time UPI-Style Transaction Fraud Detection System</b> (<a href='https://github.com/patil-08/upi-fraud-detection' color='#1D4ED8'><u>GitHub</u></a>)<br/><i>Python, XGBoost, FastAPI, Streamlit, PySpark, Scikit-learn</i>"
     story.append(Paragraph(p1_head, subhead_style))
     story.append(Spacer(1, 0.8))
 
     p1_bullets = [
-        "Built a multimodal RAG pipeline extracting text, tables, and high-DPI page images from PDFs (PyMuPDF), with sentence-aware chunking (~300 characters) to eliminate mid-sentence breaks.",
-        "Designed a dual-vector retrieval system combining 384-dimension SentenceTransformer text embeddings and 512-dimension OpenCLIP image embeddings via Reciprocal Rank Fusion, enabling joint retrieval of text and visual chart content.",
-        "Reduced retrieved context by over 60% (to 3 high-precision chunks per query) by applying a dynamic relevance cutoff (≥0.40) and MS-MARCO Cross-Encoder reranking in Qdrant, cutting noise while preserving answer accuracy.",
-        "Engineered a grounded Vision-LLM generator (Claude API) with XML-based prompt-injection defenses, inline citations, and refusal logic to prevent hallucinated answers, validated by an automated regression-testing suite; deployed via FastAPI with a Streamlit UI."
+        "Engineered an end-to-end fraud detection pipeline on 284,807 transactions (European credit card benchmark) using an XGBoost Classifier, handling severe class imbalance (~0.17% fraud rate) with cost-sensitive learning (scale_pos_weight=1000).",
+        "Built data ingestion with PySpark and feature scaling with Scikit-learn (StandardScaler) to prepare the dataset for model training.",
+        "Developed REST APIs using FastAPI and Pydantic validation to serve real-time model inference and probability-based risk tiers (LOW, MEDIUM, HIGH).",
+        "Built an interactive Streamlit dashboard simulating live UPI transactions (amount, merchant type, location) with real-time risk scores, probability breakdown, and fraud alerts."
     ]
     for b in p1_bullets:
         story.append(Paragraph(f"• {b}", bullet_style))
@@ -180,14 +182,16 @@ def generate_pdf():
 
     story.append(Spacer(1, 1.5))
 
-    # Project 2: Newsly
-    p2_head = "<b>Newsly — AI-Powered Daily News Digest Agent</b> (<a href='https://github.com/patil-08/Newsly' color='#1D4ED8'><u>GitHub</u></a> | <a href='https://newsly-b74f.onrender.com/' color='#1D4ED8'><u>Live Demo</u></a>) — <i>Python, FastAPI, Groq API (Llama 3.3-70B), Docker, GitHub Actions</i>"
+    # Project 2: Multimodal RAG Engine
+    p2_head = "<b>Multimodal RAG Engine — Cross-Modal Document Intelligence System</b> (<a href='https://github.com/patil-08' color='#1D4ED8'><u>GitHub</u></a>)<br/><i>Python, FastAPI, Qdrant, CLIP, BLIP-2, Claude API, Docker</i>"
     story.append(Paragraph(p2_head, subhead_style))
     story.append(Spacer(1, 0.8))
 
     p2_bullets = [
-        "Built an LLM-powered news agent retrieving and summarizing articles across 5 categories in real time using Google News RSS retrieval and prompt-engineered summarization with Llama 3.3-70B, in an applied RAG-style pipeline.",
-        "Automated a FastAPI dashboard with scheduled Gmail SMTP digest delivery; containerized with Docker and orchestrated daily runs via GitHub Actions with zero manual intervention."
+        "Built a multimodal RAG pipeline extracting text, tables, and high-DPI page images from unstructured PDFs (PyMuPDF), with sentence-aware chunking (~300 characters) to eliminate mid-sentence breaks.",
+        "Designed a dual-vector retrieval system combining 384-dimension SentenceTransformer text embeddings and 512-dimension OpenCLIP image embeddings via Reciprocal Rank Fusion, enabling joint retrieval of text and visual chart content.",
+        "Reduced retrieved context by over 60% (to 3 high-precision chunks per query) by applying a dynamic relevance cutoff (≥0.40) and MS-MARCO Cross-Encoder reranking in Qdrant, cutting noise while preserving answer accuracy.",
+        "Engineered a grounded Vision-LLM generator (Claude API) with XML-based prompt-injection defenses, inline citations, and refusal logic to prevent hallucinated answers, validated by an automated regression-testing suite; deployed via FastAPI with a Streamlit UI."
     ]
     for b in p2_bullets:
         story.append(Paragraph(f"• {b}", bullet_style))
@@ -196,12 +200,12 @@ def generate_pdf():
     story.append(Spacer(1, 1.5))
 
     # Project 3: Loan Approval
-    p3_head = "<b>Loan Approval Prediction System with AI Chatbot</b> (<a href='https://github.com/patil-08/loan-approval-ml.git' color='#1D4ED8'><u>GitHub</u></a> | <a href='https://loan-approval-ml-hmhp.onrender.com' color='#1D4ED8'><u>Live Demo</u></a>) — <i>Python, Scikit-learn, XGBoost, FastAPI, Streamlit, OpenAI API (GPT-4o-mini)</i>"
+    p3_head = "<b>Loan Approval Prediction System with AI Chatbot</b> (<a href='https://github.com/patil-08/loan-approval-ml.git' color='#1D4ED8'><u>GitHub</u></a> | <a href='https://loan-approval-ml-hmhp.onrender.com' color='#1D4ED8'><u>Live Demo</u></a>)<br/><i>Python, Scikit-learn, XGBoost, FastAPI, Streamlit, OpenAI API (GPT-4o-mini)</i>"
     story.append(Paragraph(p3_head, subhead_style))
     story.append(Spacer(1, 0.8))
 
     p3_bullets = [
-        "Delivered an end-to-end ML classification pipeline (XGBoost, Scikit-learn) to assess applicant financial risk and predict loan approval status based on 10+ demographic and credit variables.",
+        "Delivered an end-to-end ML classification pipeline (XGBoost, Scikit-learn) to assess applicant financial risk and predict loan approval status based on 10+ demographic and credit variables, evaluated with cross-validation.",
         "Integrated an AI financial advisory chatbot (OpenAI GPT-4o-mini) to explain prediction rationale and provide actionable, data-grounded, and interpretable recommendations.",
         "Deployed an interactive Streamlit analytics dashboard alongside the full-stack system, taking it live to cloud production via Render."
     ]
