@@ -501,8 +501,7 @@ canvas#net {
   box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
 }
 .pc-head {
-  padding: 1.25rem;
-  flex: 1;
+  padding: 1.25rem 1.25rem 0.65rem;
 }
 .pc-icon-row {
   display: flex;
@@ -539,10 +538,11 @@ canvas#net {
   font-size: 13px;
   color: var(--t1);
   line-height: 1.55;
+  margin-bottom: 0.25rem;
 }
 .pc-focus {
   padding: 0 1.25rem;
-  margin-top: -0.25rem;
+  margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   display: flex;
   flex-direction: column;
@@ -570,6 +570,7 @@ canvas#net {
   flex-wrap: wrap;
   gap: 0.35rem;
   padding: 0.5rem 1.25rem 0.75rem;
+  margin-top: auto;
 }
 .tag {
   font-size: 10px;
