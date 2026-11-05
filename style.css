@@ -2021,23 +2021,6 @@ button.sec-badge {
   margin-top: 1.5rem;
 }
 
-.resume-preview-container {
-  margin-top: 2rem;
-  width: 100%;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--bd);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
-}
-
-@media (max-width: 768px) {
-  .resume-preview-container iframe {
-    height: 520px !important;
-  }
-}
 
 /* FLOATING UTILITIES */
 .scroll-bar {
